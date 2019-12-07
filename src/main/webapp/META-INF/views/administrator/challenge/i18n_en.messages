@@ -1,0 +1,39 @@
+# i18n_en.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+administrator.challenge.form.label.title = Title:
+administrator.challenge.form.label.deadline = Deadline:
+administrator.challenge.form.label.description = Description:
+administrator.challenge.form.label.goalGold = Gold Goal:
+administrator.challenge.form.label.rewardSilver = Silver Reward:
+administrator.challenge.form.label.goalBronze = Bronze Goal:
+administrator.challenge.form.label.rewardGold = Gold Reward:
+administrator.challenge.form.label.goalSilver = Silver Goal:
+administrator.challenge.form.label.rewardBronze = Bronze Reward:
+administrator.challenge.form.button.return = Return
+administrator.challenge.form.button.update = Update
+administrator.challenge.form.button.delete = Delete
+administrator.challenge.form.button.create = Create
+
+administrator.challenge.list.label.deadline = Deadline
+administrator.challenge.list.label.title = Title
+
+administrator.challenge.form.error.deadline = The deadline must be a future date
+administrator.challenge.form.error.goldEUR = The currency must be euros (EUR or €)
+administrator.challenge.form.error.silverEUR = The currency must be euros (EUR or €)
+administrator.challenge.form.error.bronzeEUR = The currency must be euros (EUR or €)
+
+administrator.challenge.form.error.deadlineIncorrect = This must be a non-blank date
+administrator.challenge.form.error.goldIncorrect = This must be a non-blank reward
+administrator.challenge.form.error.silverIncorrect = This must be a non-blank reward
+administrator.challenge.form.error.bronzeIncorrect = This must be a non-blank reward	
+
+administrator.challenge.form.error.goldAmount = The gold reward must be equal or greater than the silver and bronze rewards
+administrator.challenge.form.error.silverAmount = The silver reward must be equal or greater than the bronze rewards

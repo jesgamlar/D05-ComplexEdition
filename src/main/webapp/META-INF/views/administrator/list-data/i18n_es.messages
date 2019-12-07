@@ -1,0 +1,21 @@
+# i18n_es.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+administrator.list-data.form.label.nAnn = Numero de Anuncios
+administrator.list-data.form.label.nCom = Numero de Compañoas
+administrator.list-data.form.label.nInv = Numero de Inversores
+administrator.list-data.form.label.minOff = Recompensa minima para Ofertas
+administrator.list-data.form.label.maxOff = Recompensa maxima para Ofertas
+administrator.list-data.form.label.avgOff = Recompensa media para Ofertas
+administrator.list-data.form.label.derOff = Desviacion tipica de recompensas para Ofertas
+administrator.list-data.form.label.minReq = Recompensa minima para Demandas
+administrator.list-data.form.label.maxReq = Recompensa maxima para Demandas
+administrator.list-data.form.label.avgReq = Recompensa media para Demandas
+administrator.list-data.form.label.derReq = Desviacion tipica de recompensas para Demandas

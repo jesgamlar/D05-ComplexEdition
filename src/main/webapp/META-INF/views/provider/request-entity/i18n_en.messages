@@ -1,0 +1,36 @@
+# i18n_en.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+provider.requestEntity.form.label.title = Title:
+provider.requestEntity.form.label.moment = Moment:
+provider.requestEntity.form.label.deadline = Deadline:
+provider.requestEntity.form.label.text = Text:
+provider.requestEntity.form.label.rewardMin = Minimum reward:
+provider.requestEntity.form.label.rewardMax = Maximum reward:
+provider.requestEntity.form.label.ticker = ticker:
+provider.requestEntity.form.button.return = Return
+
+provider.requestEntity.list.label.moment = Moment
+provider.requestEntity.list.label.title = Title
+provider.requestEntity.list.label.deadline = Deadline
+
+provider.requestEntity.form.label.checkbox = Confirm
+provider.requestEntity.form.button.create = Create
+
+provider.requestEntity.form.error.rewardMaxIncorrect = This must be non-blank
+provider.requestEntity.form.error.rewardMinIncorrect = This must be non-blank
+provider.requestEntity.form.error.rewardMaxEUR = The currency must be euros (EUR or €)
+provider.requestEntity.form.error.rewardMinEUR = The currency must be euros (EUR or €)
+provider.requestEntity.form.error.rewardMaxAmount = The max money requested must be equal or greater than the min money requested
+provider.requestEntity.form.error.deadlineIncorrect = The deadline must be a future date 
+provider.requestEntity.form.error.deadline = This must be a non-blank date
+provider.requestEntity.form.error.tickerIncorrect = This ticker is already being used
+
+provider.requestEntity.form.error.accept = Please, confirm the changes

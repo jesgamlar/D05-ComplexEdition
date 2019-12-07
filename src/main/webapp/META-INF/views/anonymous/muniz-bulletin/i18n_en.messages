@@ -1,0 +1,20 @@
+# i18n_en.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+anonymous.muniz-bulletin.form.label.name = Name:
+anonymous.muniz-bulletin.form.label.surname = Surname:
+anonymous.muniz-bulletin.form.label.idCode = Id:
+anonymous.muniz-bulletin.form.button.return = Return
+anonymous.muniz-bulletin.form.button.create = Create
+anonymous.muniz-bulletin.list.button.advance = Create
+
+anonymous.muniz-bulletin.list.label.name = Name
+anonymous.muniz-bulletin.list.label.surname = Surname
+anonymous.muniz-bulletin.list.label.idCode = Id

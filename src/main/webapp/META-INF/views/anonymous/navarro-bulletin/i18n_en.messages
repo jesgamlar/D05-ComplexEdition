@@ -1,0 +1,22 @@
+# i18n_en.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+anonymous.navarro-bulletin.list.label.name = Name
+anonymous.navarro-bulletin.list.label.age = Age
+anonymous.navarro-bulletin.list.label.height = Height (m)
+anonymous.navarro-bulletin.list.label.weight = Weight (kg)
+anonymous.navarro-bulletin.list.button.advance = Create
+
+anonymous.navarro-bulletin.form.label.name = Name
+anonymous.navarro-bulletin.form.label.age = Age
+anonymous.navarro-bulletin.form.label.height = Height
+anonymous.navarro-bulletin.form.label.weight = Weight
+anonymous.navarro-bulletin.form.button.create = Create
+anonymous.navarro-bulletin.form.button.return = Return

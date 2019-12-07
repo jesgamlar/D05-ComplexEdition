@@ -1,0 +1,34 @@
+# i18n_es.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+administrator.company-records.form.label.nameInc = Nombre:
+administrator.company-records.form.label.name = Nombre:
+administrator.company-records.form.label.isIncorporated = ¿Es incorporada?	
+administrator.company-records.form.label.sector = Sector:
+administrator.company-records.form.label.ceo = CEO:
+administrator.company-records.form.label.activities = Actividades:
+administrator.company-records.form.label.website = Sitio web:
+administrator.company-records.form.label.phone = Teléfono:
+administrator.company-records.form.label.email = Email:
+administrator.company-records.form.label.stars = Valoración:
+administrator.company-records.form.button.update = Actualizar
+administrator.company-records.form.button.delete = Borrar
+administrator.company-records.form.button.create = Crear
+administrator.company-records.form.button.return = Volver
+
+administrator.company-records.list.label.name = Nombre
+administrator.company-records.list.label.sector = Sector
+administrator.company-records.list.label.phone = Teléfono
+administrator.company-records.list.label.stars = Valoración
+
+administrator.company-records.list.button.create = Crear
+
+form.option.true = Si
+form.option.false = No

@@ -1,0 +1,22 @@
+# i18n_en.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+anonymous.gamez-bulletin.form.label.food = Food:
+anonymous.gamez-bulletin.form.label.kcalories = Kcal.:
+anonymous.gamez-bulletin.form.label.directions = Directions:
+anonymous.gamez-bulletin.form.button.create = Eat it
+anonymous.gamez-bulletin.form.button.return = Return
+
+anonymous.gamez-bulletin.list.label.moment = Date
+anonymous.gamez-bulletin.list.label.kcalories = Kcal.
+anonymous.gamez-bulletin.list.label.directions = Directions
+anonymous.gamez-bulletin.list.label.food = Food
+
+anonymous.gamez-bulletin.form.button.create = Create

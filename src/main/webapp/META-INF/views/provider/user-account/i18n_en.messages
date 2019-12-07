@@ -1,0 +1,23 @@
+# i18n_en.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+provider.user-account.form.title.update = Update your account
+
+provider.user-account.form.label.username = Username:
+provider.user-account.form.label.password = Password:
+provider.user-account.form.label.confirmation = Confirmation:
+provider.user-account.form.label.name = Name:
+provider.user-account.form.label.surname = Surname:
+provider.user-account.form.label.email = Email:
+ 
+provider.user-account.form.button.update = Update
+provider.user-account.form.button.return = Return
+
+provider.user-account.form.error.confirmation-no-match = Password confirmation doesn't match 

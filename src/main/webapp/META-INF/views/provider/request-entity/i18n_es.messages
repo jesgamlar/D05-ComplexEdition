@@ -1,0 +1,36 @@
+# i18n_es.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+provider.requestEntity.form.label.title = Título:
+provider.requestEntity.form.label.moment = Momento:
+provider.requestEntity.form.label.deadline = Fecha límite:
+provider.requestEntity.form.label.text = Texto:
+provider.requestEntity.form.label.rewardMin = Recompensa mínima:
+provider.requestEntity.form.label.rewardMax = Recompensa máxima:
+provider.requestEntity.form.label.ticker = Identificador:
+provider.requestEntity.form.button.return = Volver
+
+provider.requestEntity.list.label.moment = Momento
+provider.requestEntity.list.label.title = Título
+provider.requestEntity.list.label.deadline = Fecha Limite
+
+provider.requestEntity.form.label.checkbox = Confirmar
+provider.requestEntity.form.button.create = Crear
+
+provider.requestEntity.form.error.rewardMaxIncorrect = Esto no puede estar vacío
+provider.requestEntity.form.error.rewardMinIncorrect = Esto no puede estar vacío
+provider.requestEntity.form.error.rewardMaxEUR = La cantidad deben ser euros (EUR o €)
+provider.requestEntity.form.error.rewardMinEUR = La cantidad deben ser euros (EUR o €)
+provider.requestEntity.form.error.rewardMaxAmount = La cantidad máxima requerida debe ser mayor o igual a la mínima requerida
+provider.requestEntity.form.error.deadlineIncorrect = La fecha límite debe estar en el futuro
+provider.requestEntity.form.error.deadline = Esto debe ser una fecha no vacía
+provider.requestEntity.form.error.tickerIncorrect = Este ticker ya está en uso
+
+provider.requestEntity.form.error.accept = Por favor, confirme los cambios

@@ -1,0 +1,39 @@
+# i18n_es.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+administrator.challenge.form.label.title = Título:
+administrator.challenge.form.label.deadline = Fecha límite:
+administrator.challenge.form.label.description = Descripción:
+administrator.challenge.form.label.goalGold = Meta de Oro:
+administrator.challenge.form.label.rewardSilver = Recompensa de Plata:
+administrator.challenge.form.label.goalBronze = Meta de Bronce:
+administrator.challenge.form.label.rewardGold = Recompensa de Oro:
+administrator.challenge.form.label.goalSilver = Meta de Plata:
+administrator.challenge.form.label.rewardBronze = Recompensa de Bronce:
+administrator.challenge.form.button.return = Volver
+administrator.challenge.form.button.update = Actualizar
+administrator.challenge.form.button.delete = Eliminar
+administrator.challenge.form.button.create = Crear
+
+administrator.challenge.list.label.deadline = Fecha límite
+administrator.challenge.list.label.title = Título
+
+administrator.challenge.form.error.deadline = La fecha límite debe estar en el futuro
+administrator.challenge.form.error.goldEUR = La cantidad deben ser euros (EUR o €)
+administrator.challenge.form.error.silverEUR = La cantidad deben ser euros (EUR o €)
+administrator.challenge.form.error.bronzeEUR = La cantidad deben ser euros (EUR o €)
+
+administrator.challenge.form.error.deadlineIncorrect = Esto debe ser una fecha no vacía
+administrator.challenge.form.error.goldIncorrect = Esto debe ser una recompensa no vacía
+administrator.challenge.form.error.silverIncorrect = Esto debe ser una recompensa no vacía
+administrator.challenge.form.error.bronzeIncorrect = Esto debe ser una recompensa no vacía
+
+administrator.challenge.form.error.goldAmount = La recompensa de oro debe ser mayor o igual que la recompensa de pata y la de bronce
+administrator.challenge.form.error.silverAmount = La recompensa de plata debe ser mayor o igual que la recompensa de bronce

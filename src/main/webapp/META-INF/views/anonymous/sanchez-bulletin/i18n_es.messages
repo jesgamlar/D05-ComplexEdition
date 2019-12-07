@@ -1,0 +1,21 @@
+# i18n_es.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+anonymous.sanchez-bulletin.list.label.date = Fecha
+anonymous.sanchez-bulletin.list.label.author = Autor
+anonymous.sanchez-bulletin.list.label.city = Ciudad
+anonymous.sanchez-bulletin.list.label.country = Pais
+
+anonymous.sanchez-bulletin.form.label.author = Autor
+anonymous.sanchez-bulletin.form.label.city = Ciudad
+anonymous.sanchez-bulletin.form.label.country = Pais
+
+anonymous.sanchez-bulletin.form.button.create = Crear
+anonymous.sanchez-bulletin.form.button.return = Volver
