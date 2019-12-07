@@ -6,4 +6,4 @@
                                                      |__/                     
 ${Ansi.DEFAULT}
 Powered by Spring Boot ${spring-boot.version}
-Powered by Starter-Project 2.19.1
+Powered by Starter-Project 2.19.3

@@ -411,8 +411,12 @@ public abstract class AbstractController<R extends UserRole, E> {
 			}
 			break;
 		case DELETE:
-			// HINT: dealing with a DELETE request just involves invoking the service to delete the entity.
-			service.delete(request, entity);
+			// HINT: dealing with a DELETE request involves validating that the entity can be deleted
+			// HINT+ and then invoking the service to delete the entity.
+			service.validate(request, entity, errors);
+			if (!errors.hasErrors()) {
+				service.delete(request, entity);
+			}
 			break;
 		default:
 			Assert.state(false, request.getLocale(), "default.error.endpoint-unavailable");
