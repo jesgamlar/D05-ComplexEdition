@@ -510,7 +510,6 @@
 		<property name="auditor" ref="auditor01"/>
 	</bean>
 	
-	
 	<!-- Credit Card -->
 	
 	<bean id="creditCard01" class="acme.entities.creditCard.CreditCard">
@@ -537,59 +536,6 @@
 		<property name="cvv" value="254" />
 	</bean>
 	
-	
-	<!-- Commercial Banners -->
-
-	<bean id="cbanner01" class="acme.entities.banner.CommercialBanner">
-		<property name="picture" value="http://picture.com" />
-		<property name="slogan" value="Slogaaan!" />
-		<property name="url" value="http://url.com" />
-		<property name="creditCard" ref="creditCard01"/>
-		<property name="sponsor" ref="sponsor1Sponsor"/>
-	</bean>
-
-	<bean id="cbanner02" class="acme.entities.banner.CommercialBanner">
-		<property name="picture" value="http://picturepicture.com" />
-		<property name="slogan" value="Slogan!" />
-		<property name="url" value="http://urlurl.com" />
-		<property name="creditCard" ref="creditCard02"/>
-		<property name="sponsor" ref="sponsor1Sponsor"/>
-	</bean>
-
-	<bean id="cbanner03" class="acme.entities.banner.CommercialBanner">
-		<property name="picture" value="http://pictures.com" />
-		<property name="slogan" value="Slogaaan again!" />
-		<property name="url" value="http://urls.com" />
-		<property name="creditCard" ref="creditCard03"/>
-		<property name="sponsor" ref="sponsor2Sponsor"/>
-	</bean>
-	
-	
-	<!-- Non Commercial Banners -->
-
-	<bean id="ncbanner01" class="acme.entities.banner.NonCommercialBanner">
-		<property name="picture" value="http://picture.com" />
-		<property name="slogan" value="Slogaaan!" />
-		<property name="url" value="http://url.com" />
-		<property name="jingle" value="Jingle Pringle" />
-	</bean>
-
-	<bean id="ncbanner02" class="acme.entities.banner.NonCommercialBanner">
-		<property name="picture" value="http://picturepicture.com" />
-		<property name="slogan" value="Slogan!" />
-		<property name="url" value="http://urlurl.com" />
-		<property name="jingle" value="Jijijingle" />
-	</bean>
-
-	<bean id="ncbanner03" class="acme.entities.banner.NonCommercialBanner">
-		<property name="picture" value="http://pictures.com" />
-		<property name="slogan" value="Slogaaan again!" />
-		<property name="url" value="http://urls.com" />
-		<property name="jingle" value="Pripripringle" />
-	</bean>
-
-
-
 	<!-- Sponsors -->
 
     <bean name="sponsor1UserAccount" class="acme.framework.entities.UserAccount">
@@ -621,9 +567,6 @@
         <property name="userAccount" ref="sponsor1UserAccount" />
     </bean>
     
-    
-    
-    
      <bean name="sponsor2UserAccount" class="acme.framework.entities.UserAccount">
         <property name="username" value="sponsor2" />
         <property name="password" value="sponsor2" />
@@ -652,13 +595,57 @@
     <bean name="sponsor2Authenticated" class="acme.framework.entities.Authenticated">
         <property name="userAccount" ref="sponsor2UserAccount" />
     </bean>
+    
+    <!-- Commercial Banners -->
 
+	<bean id="cbanner01" class="acme.entities.banner.CommercialBanner">
+		<property name="picture" value="http://picture.com" />
+		<property name="slogan" value="Slogaaan!" />
+		<property name="url" value="http://url.com" />
+		<property name="creditCard" ref="creditCard01"/>
+		<property name="sponsor" ref="sponsor1Sponsor"/>
+	</bean>
 
+	<bean id="cbanner02" class="acme.entities.banner.CommercialBanner">
+		<property name="picture" value="http://picturepicture.com" />
+		<property name="slogan" value="Slogan!" />
+		<property name="url" value="http://urlurl.com" />
+		<property name="creditCard" ref="creditCard02"/>
+		<property name="sponsor" ref="sponsor1Sponsor"/>
+	</bean>
 
+	<bean id="cbanner03" class="acme.entities.banner.CommercialBanner">
+		<property name="picture" value="http://pictures.com" />
+		<property name="slogan" value="Slogaaan again!" />
+		<property name="url" value="http://urls.com" />
+		<property name="creditCard" ref="creditCard03"/>
+		<property name="sponsor" ref="sponsor2Sponsor"/>
+	</bean>
+	
+	<!-- Non Commercial Banners -->
 
+	<bean id="ncbanner01" class="acme.entities.banner.NonCommercialBanner">
+		<property name="picture" value="http://picture.com" />
+		<property name="slogan" value="Slogaaan!" />
+		<property name="url" value="http://url.com" />
+		<property name="jingle" value="Jingle Pringle" />
+	</bean>
+
+	<bean id="ncbanner02" class="acme.entities.banner.NonCommercialBanner">
+		<property name="picture" value="http://picturepicture.com" />
+		<property name="slogan" value="Slogan!" />
+		<property name="url" value="http://urlurl.com" />
+		<property name="jingle" value="Jijijingle" />
+	</bean>
+
+	<bean id="ncbanner03" class="acme.entities.banner.NonCommercialBanner">
+		<property name="picture" value="http://pictures.com" />
+		<property name="slogan" value="Slogaaan again!" />
+		<property name="url" value="http://urls.com" />
+		<property name="jingle" value="Pripripringle" />
+	</bean>
 
 	<!-- Announcements -->
-
 
 	<bean class="acme.entities.announcements.Announcement" id="announcement01">
 		<property value="Sample announcement 01" name="title" />
@@ -1169,6 +1156,42 @@
         <property name="userAccount" ref="authenticated08UserAccount" />
     </bean>
     
+     <!-- MessageThreads -->
+    
+    <bean id="messagethread01" class="acme.entities.messageThread.MessageThread">
+		<property name="title" value="MT 1" />
+		<property name="moment" value="2019/11/03 00:00" />
+		<property name="starter">
+			<ref bean="authenticated01" />
+		</property>
+		<property name="users">
+            <list>
+                <ref bean="userThread01" />
+                <ref bean="userThread02" />
+                <ref bean="userThread03" />
+                <ref bean="userThread04" />
+                <ref bean="userThread09" />
+                <ref bean="userThread10" />
+            </list>
+        </property>
+	</bean>
+	
+	<bean id="messagethread02" class="acme.entities.messageThread.MessageThread">
+		<property name="title" value="MT 2" />
+		<property name="moment" value="2019/10/02 00:00" />
+		<property name="starter">
+			<ref bean="authenticated05" />
+		</property>
+		<property name="users">
+            <list>
+                <ref bean="userThread05" />
+                <ref bean="userThread06" />
+                <ref bean="userThread07" />
+                <ref bean="userThread08" />
+            </list>
+        </property>
+	</bean>
+    
     <!-- UserThreads -->
     
     <bean name="userThread01" class="acme.entities.userThread.UserThread">
@@ -1220,43 +1243,6 @@
         <property name="messageThread" ref="messagethread01" />
         <property name="user" ref="authenticated08" />
     </bean>
-    
-    
-    <!-- MessageThreads -->
-    
-    <bean id="messagethread01" class="acme.entities.messageThread.MessageThread">
-		<property name="title" value="MT 1" />
-		<property name="moment" value="2019/11/03 00:00" />
-		<property name="starter">
-			<ref bean="authenticated01" />
-		</property>
-		<property name="users">
-            <list>
-                <ref bean="userThread01" />
-                <ref bean="userThread02" />
-                <ref bean="userThread03" />
-                <ref bean="userThread04" />
-                <ref bean="userThread09" />
-                <ref bean="userThread10" />
-            </list>
-        </property>
-	</bean>
-	
-	<bean id="messagethread02" class="acme.entities.messageThread.MessageThread">
-		<property name="title" value="MT 2" />
-		<property name="moment" value="2019/10/02 00:00" />
-		<property name="starter">
-			<ref bean="authenticated05" />
-		</property>
-		<property name="users">
-            <list>
-                <ref bean="userThread05" />
-                <ref bean="userThread06" />
-                <ref bean="userThread07" />
-                <ref bean="userThread08" />
-            </list>
-        </property>
-	</bean>
 	
 	<!-- 	Messages   -->
 	

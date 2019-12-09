@@ -54,10 +54,6 @@
 			<acme:menu-suboption code="master.menu.authenticated.listOffers" action="/authenticated/offer/list"/>
 			<acme:menu-suboption code="master.menu.authenticated.listRequests" action="/authenticated/request-entity/list"/>
 		</acme:menu-option>
-		
-		<acme:menu-option code="master.menu.employer" access="hasRole('Employer')">
-			<acme:menu-suboption code="master.menu.employer.listJobs" action="/employer/job/list-mine"/>
-		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.commercial-banner" action="/administrator/commercial-banner/list"/>
