@@ -26,13 +26,6 @@ master.menu.sign-up = Registrarse
 master.menu.sign-in = Entrar
 master.menu.sign-out = Salir
 
-
-# master.menu.employer #######################################################
-
-master.menu.employer = Empleado
-
-master.menu.employer.listJobs = Listar Mis Trabajos
-
 # master.menu.authenticated #######################################################
 
 master.menu.authenticated = Autentificado
@@ -102,7 +95,7 @@ master.menu.worker.application.list = Solicitudes
 master.menu.employer = Empleador
 
 master.menu.employer.application.list = Solicitudes
-master.menu.employer.job.list = Trabajos
+master.menu.employer.job.list = Mis Trabajos
 
 
 # master.menu.sponsor ########################################################
