@@ -57,20 +57,6 @@ public class AdministratorJobsApplicationDashboardChartService implements Abstra
 			mapApplication.put(this.repository.applicationStatus().get(i), this.repository.application().get(i));
 		}
 
-		for (int i = 0; i < this.repository.application().size(); i++) {
-			if (!mapJobs.containsKey(this.repository.applicationStatus().get(i))) {
-				mapJobs.put(this.repository.applicationStatus().get(i), 0);
-			}
-
-		}
-
-		for (int i = 0; i < this.repository.jobs().size(); i++) {
-			if (!mapApplication.containsKey(this.repository.jobsStatus().get(i))) {
-				mapApplication.put(this.repository.jobsStatus().get(i), 0);
-			}
-
-		}
-
 		result.setJobsStatus(mapJobs);
 		result.setApplicationStatus(mapApplication);
 

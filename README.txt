@@ -12,3 +12,15 @@ This is the Starter-Project project, which is intended to be a core learning ass
 who have enroled the Design and Testing subject of the Software Engineering curriculum of the 
 University of Sevilla.  This project provides a template our students can use to get their projects 
 up and running very quickly.
+
+
+
+
+
+TASK 004: El worker accede a los jobs desde el menú de autentificado. Si es un worker, cunado haga show de un
+job, le saldrá un botón con la opción de 'apply for this job'.
+
+TASK 004: El reference number de las applications tiene el siguiente patrón: Eeee-Jjjj:Wwwwd. E=E; J=J; W=W;
+eee=id del employer representado con sus 3 últimos dígitos; jjj=id del job representado con sus 3 últimos dígitos;
+www=id del worker representado con sus 3 últimos dígitos; d=dígito de diferencia por si un worker solicita más de una
+vez el mismo trabajo.

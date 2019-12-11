@@ -29,3 +29,5 @@ authenticated.job.list.label.deadline = Deadline
 
 authenticated.job.list.label.status = Status
 
+worker.application.form.button.create = Apply for this job
+
