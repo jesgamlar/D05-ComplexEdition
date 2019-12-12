@@ -26,3 +26,4 @@ authenticated.job.list.label.title = Título
 authenticated.job.list.label.deadline = Fecha límite
 authenticated.job.list.label.status = Estado
 
+worker.application.form.button.create = Solicitar este trabajo

@@ -27,25 +27,23 @@
 	<acme:form-textarea code="authenticated.job.form.label.description" path="description"/>
 	
 
-	<p id="duties"></p>
-	 <p id="auditRecords"></p>
-	<acme:form-return code="authenticated.job.form.button.return"/>
-	
-	<script type="text/javascript">
-        $(document).ready(function() {
-            var submit = `<acme:form-submit code='authenticated.job.form.button.listDuties' method='get' action='/authenticated/duty/list?id=${id}' />`;
-            document.getElementById("duties").innerHTML = submit;
-        });
-    </script>
-    
-    	<script type="text/javascript">
-        $(document).ready(function() {
-            var submit = `<acme:form-submit code='authenticated.job.form.button.listAuditRecords' method='get' action='/authenticated/audit-records/list-mine?id=${id}' />`;
-            document.getElementById("auditRecords").innerHTML = submit;
-        });
-    </script>
+
 
 	
+	<acme:form-submit test="${principal.hasRole('acme.entities.roles.Worker') == true}"
+		code="worker.application.form.button.create"
+		action="/worker/application/create?jobid=${id}"
+		method="get"/>
+		
+	<acme:form-submit code='authenticated.job.form.button.listDuties'
+	 method='get' action='/authenticated/duty/list?id=${id}' />
+	
+	<acme:form-submit code='authenticated.job.form.button.listAuditRecords'
+	 method='get' action='/authenticated/audit-records/list-mine?id=${id}' />
+	 
+	 <acme:form-return code="authenticated.job.form.button.return"/>
+	
+
 </acme:form>
 
 

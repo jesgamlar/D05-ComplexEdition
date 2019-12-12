@@ -34,7 +34,7 @@ public class WorkerApplicationShowService implements AbstractShowService<Worker,
 		Worker worker = app.getWorker();
 
 		principal = request.getPrincipal();
-		result = app.isFinalMode() || !app.isFinalMode() && worker.getUserAccount().getId() == principal.getAccountId();
+		result = worker.getUserAccount().getId() == principal.getAccountId();
 
 		return result;
 	}
@@ -46,7 +46,7 @@ public class WorkerApplicationShowService implements AbstractShowService<Worker,
 		assert model != null;
 
 		request.unbind(entity, model, "referenceNumber", "moment", "statement");
-		request.unbind(entity, model, "skills", "qualifications", "finalMode", "jobTitle");
+		request.unbind(entity, model, "skills", "qualifications", "status", "jobTitle");
 
 	}
 

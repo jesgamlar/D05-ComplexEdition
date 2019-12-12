@@ -16,6 +16,6 @@ public interface AuthenticatedDutyRepository extends AbstractRepository {
 	Duty findOneDutyById(int id);
 
 	@Query("select d from Duty d where d.job.id = ?1")
-	Collection<Duty> findManyByJobId(int id);
+	Collection<Duty> findManyByDutyId(int id);
 
 }

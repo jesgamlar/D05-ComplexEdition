@@ -17,5 +17,6 @@ employer.application.form.label.qualifications = Calificaciones:
 employer.application.list.label.referenceNumber = Número de referencia
 employer.application.list.label.title = Título
 employer.application.list.label.moment = Momento
+employer.application.list.label.status = Estado
 
 employer.application.form.button.return = Volver

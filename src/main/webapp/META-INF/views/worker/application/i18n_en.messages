@@ -18,7 +18,7 @@ worker.application.form.label.qualifications = Qualifications:
 worker.application.form.label.jobTitle
 
 worker.application.list.label.referenceNumber = Reference number
-worker.application.list.label.statement = Statement
+worker.application.list.label.status = Status
 worker.application.list.label.moment = Moment
 
 worker.application.form.label.jobTitle = Job

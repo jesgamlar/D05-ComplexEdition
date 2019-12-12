@@ -26,12 +26,12 @@
     create table `application` (
        `id` integer not null,
         `version` integer not null,
-        `final_mode` bit not null,
         `moment` datetime(6),
         `qualifications` varchar(255),
         `reference_number` varchar(255),
         `skills` varchar(255),
         `statement` varchar(255),
+        `status` integer,
         `job_id` integer not null,
         `worker_id` integer not null,
         primary key (`id`)
