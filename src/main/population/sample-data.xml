@@ -403,7 +403,7 @@
     	<property name="statement" value="example statement" />
     	<property name="skills" value="example skills" />
     	<property name="qualifications" value="example qualifications" />
-    	<property name="finalMode" value="true" />
+    	<property name="status" value="PENDING" />
     	<property name="worker" ref="worker1Worker" />
     	<property name="job" ref="job01" />
     </bean>
@@ -414,7 +414,7 @@
     	<property name="statement" value="example statement" />
     	<property name="skills" value="example skills" />
     	<property name="qualifications" value="example qualifications" />
-    	<property name="finalMode" value="false" />
+    	<property name="status" value="REJECTED" />
     	<property name="worker" ref="worker1Worker" />
     	<property name="job" ref="job02" />
     </bean>
@@ -425,7 +425,7 @@
     	<property name="statement" value="example statement" />
     	<property name="skills" value="example skills" />
     	<property name="qualifications" value="example qualifications" />
-    	<property name="finalMode" value="true" />
+    	<property name="status" value="PENDING" />
     	<property name="worker" ref="worker2Worker" />
     	<property name="job" ref="job02" />
     </bean>
@@ -436,7 +436,7 @@
     	<property name="statement" value="example statement" />
     	<property name="skills" value="example skills" />
     	<property name="qualifications" value="example qualifications" />
-    	<property name="finalMode" value="true" />
+    	<property name="status" value="ACCEPTED" />
     	<property name="worker" ref="worker2Worker" />
     	<property name="job" ref="job03" />
     </bean>

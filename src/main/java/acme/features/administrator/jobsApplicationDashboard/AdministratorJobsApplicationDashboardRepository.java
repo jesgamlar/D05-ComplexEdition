@@ -25,13 +25,13 @@ public interface AdministratorJobsApplicationDashboardRepository extends Abstrac
 	@Query("select  finalMode from Job group by finalMode order by finalMode asc")
 	ArrayList<String> jobsStatus();
 
-	@Query("select  finalMode from Application group by finalMode order by finalMode asc")
+	@Query("select  status from Application group by status order by status asc")
 	ArrayList<String> applicationStatus();
 
 	@Query("select  count(finalMode) from Job group by finalMode order by finalMode asc")
 	ArrayList<Integer> jobs();
 
-	@Query("select  count(finalMode) from Application group by finalMode order by finalMode asc")
+	@Query("select  count(status) from Application group by status order by status asc")
 	ArrayList<Integer> application();
 
 }

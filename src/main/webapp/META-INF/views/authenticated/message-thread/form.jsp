@@ -21,14 +21,7 @@
 	<acme:form-textbox code="authenticated.messageThread.form.label.starterUsername" path="starterUsername"/>
 
 
-	<p id="messages"></p>
-	
+	<acme:form-submit code='authenticated.messageThread.form.button.listMessages' method='get' action='/authenticated/message/list-mine?id=${id}' />
 	<acme:form-return code="authenticated.messageThread.form.button.return"/>
 	
-	<script type="text/javascript">
-		$(document).ready(function() {
-			var submit = `<acme:form-submit code='authenticated.messageThread.form.button.listMessages' method='get' action='/authenticated/message/list-mine?id=${id}' />`;
-			document.getElementById("messages").innerHTML = submit;
-		});
-	</script>
 </acme:form>
