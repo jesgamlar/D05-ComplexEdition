@@ -12,6 +12,10 @@ employer.duty.form.label.title = Título:
 employer.duty.form.label.description = Descripción:
 employer.duty.form.label.timexWeek = Tiempo por semana:
 employer.duty.form.button.return = Volver
+employer.duty.form.button.create = Crear Tarea
+employer.duty.form.button.delete = Eliminar Tarea
+employer.duty.form.button.update = Actualizar Tarea
+employer.duty.form.error.timexWeekRestriction = La carga de trabajo semanal debe estar entre 0.01 y 100.00
 
 employer.duty.list.label.title = Título
 employer.duty.list.label.timexWeek = Tiempo por semana

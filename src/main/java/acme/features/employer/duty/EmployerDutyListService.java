@@ -13,7 +13,7 @@ import acme.framework.components.Request;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class EmployerDutyListMineService implements AbstractListService<Employer, Duty> {
+public class EmployerDutyListService implements AbstractListService<Employer, Duty> {
 
 	//Internal state --------------------------------------------------
 

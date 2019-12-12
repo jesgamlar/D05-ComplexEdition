@@ -11,15 +11,24 @@
 
 employer.job.form.label.title = Title:
 employer.job.form.label.moreInfo = More Info:
-employer.job.form.label.status = Status:
+employer.job.form.label.status = Publish
 employer.job.form.label.salary = Salary:
 employer.job.form.label.deadline = Deadline:
 employer.job.form.label.reference = Reference:
 employer.job.form.label.description = Description:
 employer.job.form.button.return = Return
+employer.job.form.button.update = Update
 employer.job.form.button.listDuties = List Duties
+employer.job.form.button.createDuties = Create Duties
+employer.job.form.button.createJob = Create Job
+employer.job.form.button.delete = Delete
+employer.job.form.delete = This job can't be deleted because it has application(s)
+employer.job.form.error.spamDescription = This is considered a spam description
+employer.job.form.error.no100 = The duties must sum up to 100% the weekly workload
+employer.job.form.error.noDuties = The job must have at least one duty
 
 employer.job.list.label.reference = Reference
 employer.job.list.label.title = Title
 employer.job.list.label.deadline = Deadline
 employer.job.list.label.status = Status
+employer.job.list.button.createJob = Create Job
