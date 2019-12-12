@@ -1,6 +1,9 @@
 
 package acme.features.employer.job;
 
+import java.util.Date;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -64,6 +67,16 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+
+		if (!errors.hasErrors("deadline")) {
+			Date currentDate = new Date(System.currentTimeMillis());
+			errors.state(request, entity.getDeadline().after(currentDate), "deadline", "employer.job.form.error.deadline");
+		}
+
+		if (!errors.hasErrors("reference")) {
+			List<String> referenceCodes = this.repository.findReferences();
+			errors.state(request, !referenceCodes.contains(entity.getReference()), "reference", "employer.job.form.error.reference");
+		}
 	}
 
 	@Override

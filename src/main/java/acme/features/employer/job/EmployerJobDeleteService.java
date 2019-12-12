@@ -70,7 +70,7 @@ public class EmployerJobDeleteService implements AbstractDeleteService<Employer,
 		if (!errors.hasErrors()) {
 			List<Integer> ids = this.repository.findJobsWithApplications();
 			int idThisJob = request.getModel().getInteger("id");
-			errors.state(request, !ids.contains(idThisJob), "reference", "employer.job.form.delete");
+			errors.state(request, !ids.contains(idThisJob), "reference", "employer.job.form.error.delete");
 		}
 
 	}

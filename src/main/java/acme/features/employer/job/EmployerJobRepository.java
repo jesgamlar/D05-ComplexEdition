@@ -36,6 +36,9 @@ public interface EmployerJobRepository extends AbstractRepository {
 	@Query("select s.englishWords from Spam s")
 	String findEnglishWords();
 
+	@Query("select j.reference from Job j")
+	List<String> findReferences();
+
 	@Query("select d.timexWeek from Duty d where d.job.id = ?1")
 	List<Double> findTimexWeekThisJob(int jobId);
 

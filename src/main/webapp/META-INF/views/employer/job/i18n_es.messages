@@ -22,10 +22,12 @@ employer.job.form.button.listDuties = Listar Tareas
 employer.job.form.button.createDuties = Crear Tareas
 employer.job.form.button.createJob = Crear Trabajo
 employer.job.form.button.delete = Eliminar
-employer.job.form.delete = Este trabajo no puede ser borrado porque tiene solicitud(es)
+employer.job.form.error.delete = Este trabajo no puede ser borrado porque tiene solicitud(es)
 employer.job.form.error.spamDescription = Esto es considerado una descripción no deseada
 employer.job.form.error.no100 = Las cargas de trabajo semanales de las tareas deben sumar un 100%
 employer.job.form.error.noDuties = El trabajo debe tener al menos una tarea
+employer.job.form.error.reference = Ya hay un trabajo con esa referencia
+employer.job.form.error.deadline = La fecha límite debe ser futura
 
 employer.job.list.label.reference = Referencia
 employer.job.list.label.title = Título

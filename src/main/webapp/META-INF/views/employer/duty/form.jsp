@@ -23,7 +23,7 @@
 	<acme:form-return code="employer.duty.form.button.return"/>
 	<acme:form-submit test="${command == 'create'}"
 		code="employer.duty.form.button.create"
-		action="/employer/duty/create"/>
+		action="/employer/duty/create?id=${idJob}"/>
 	<acme:form-submit test="${command == 'show'}"
 		code="employer.duty.form.button.update"
 		action="/employer/duty/update"/>

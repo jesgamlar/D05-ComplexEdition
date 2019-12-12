@@ -22,10 +22,12 @@ employer.job.form.button.listDuties = List Duties
 employer.job.form.button.createDuties = Create Duties
 employer.job.form.button.createJob = Create Job
 employer.job.form.button.delete = Delete
-employer.job.form.delete = This job can't be deleted because it has application(s)
+employer.job.form.error.delete = This job can't be deleted because it has application(s)
 employer.job.form.error.spamDescription = This is considered a spam description
 employer.job.form.error.no100 = The duties must sum up to 100% the weekly workload
 employer.job.form.error.noDuties = The job must have at least one duty
+employer.job.form.error.reference = There is already a job with that reference
+employer.job.form.error.deadline = The deadline must be future
 
 employer.job.list.label.reference = Reference
 employer.job.list.label.title = Title
