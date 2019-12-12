@@ -10,3 +10,7 @@
 	<acme:list-column code="employer.job.list.label.status" path="status" width="20%"/>
 	
 </acme:list>
+
+<acme:form>
+	<acme:form-submit code="employer.job.list.button.createJob" method="get" action="/employer/job/create" />
+</acme:form>

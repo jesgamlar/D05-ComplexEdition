@@ -13,6 +13,10 @@ who have enroled the Design and Testing subject of the Software Engineering curr
 University of Sevilla.  This project provides a template our students can use to get their projects 
 up and running very quickly.
 
+TASK 002:
+En job los errores de que no se puede borrar si tiene solicitudes y debe tener el 100% para poder ser guardado... sale el mensaje en el codigo de referencia
+Un job tendra automaticamente el final mode a false a la hora de crearlo
+La restriccion de que no puede ser modificado si esta en final mode implementada como que no aparezca el boton de update en ese caso
 
 
 
@@ -24,3 +28,4 @@ TASK 004: El reference number de las applications tiene el siguiente patrón: Ee
 eee=id del employer representado con sus 3 últimos dígitos; jjj=id del job representado con sus 3 últimos dígitos;
 www=id del worker representado con sus 3 últimos dígitos; d=dígito de diferencia por si un worker solicita más de una
 vez el mismo trabajo.
+
