@@ -26,7 +26,7 @@ public class Duty extends DomainEntity {
 	@NotBlank
 	private String				description;
 
-	@Digits(integer = 2, fraction = 2)
+	@Digits(integer = 3, fraction = 2)
 	private double				timexWeek;
 
 	@NotNull

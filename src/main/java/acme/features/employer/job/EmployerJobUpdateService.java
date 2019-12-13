@@ -36,7 +36,8 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 		Collection<Job> jobsEmployer = this.repository.findManyJobByEmployerId(id);
 		int idJob = request.getModel().getInteger("id");
 		Job job = this.repository.findOneJobById(idJob);
-		boolean res = !request.getModel().getBoolean("finalMode") && jobsEmployer.contains(job);
+		boolean isPublished = this.repository.findOneJobStatusById(idJob);
+		boolean res = !isPublished && jobsEmployer.contains(job);
 
 		return res;
 	}
@@ -79,8 +80,12 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 		assert errors != null;
 
 		if (!errors.hasErrors("reference")) {
-			List<String> referenceCodes = this.repository.findReferences();
-			errors.state(request, !referenceCodes.contains(entity.getReference()), "reference", "employer.job.form.error.reference");
+			int id = request.getModel().getInteger("id");
+			String oldReference = this.repository.findOneJobReferenceById(id);
+			if (!oldReference.equals(request.getModel().getString("reference"))) {
+				List<String> referenceCodes = this.repository.findReferences();
+				errors.state(request, !referenceCodes.contains(entity.getReference()), "reference", "employer.job.form.error.reference");
+			}
 		}
 
 		if (!errors.hasErrors("deadline")) {

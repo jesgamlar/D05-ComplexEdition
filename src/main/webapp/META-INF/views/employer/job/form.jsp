@@ -48,10 +48,10 @@
 			action="/employer/job/delete"/>
 	</acme:check-access>
 		
-	<acme:check-access test="${command != 'create' }">
-		<acme:form-submit code="employer.job.form.button.listDuties" method="get" action="/employer/duty/list?id=${id}" />
+	<acme:check-access test="${command == 'show'}">
+		<acme:form-submit code="employer.job.form.button.listDuties" method="get" action="/employer/duty/list?${pageContext.request.queryString}" />
 		<acme:check-access test="${finalMode == false }">
-			<acme:form-submit code="employer.job.form.button.createDuties" method="get" action="/employer/duty/create?id=${id}" />
+			<acme:form-submit code="employer.job.form.button.createDuties" method="get" action="/employer/duty/create?${pageContext.request.queryString}" />
 		</acme:check-access>
 	</acme:check-access>
 	

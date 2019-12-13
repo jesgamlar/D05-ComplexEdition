@@ -44,4 +44,10 @@ public interface EmployerJobRepository extends AbstractRepository {
 
 	@Query("select d from Duty d where d.job.id = ?1")
 	Collection<Duty> findManyDutiesByJobId(int id);
+
+	@Query("select j.reference from Job j where j.id = ?1")
+	String findOneJobReferenceById(int id);
+
+	@Query("select j.finalMode from Job j where j.id = ?1")
+	boolean findOneJobStatusById(int id);
 }
