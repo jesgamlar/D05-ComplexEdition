@@ -22,5 +22,5 @@ job, le saldrá un botón con la opción de 'apply for this job'.
 
 TASK 004: El reference number de las applications tiene el siguiente patrón: Eeee-Jjjj:Wwwwd. E=E; J=J; W=W;
 eee=id del employer representado con sus 3 últimos dígitos; jjj=id del job representado con sus 3 últimos dígitos;
-www=id del worker representado con sus 3 últimos dígitos; d=dígito de diferencia por si un worker solicita más de una
-vez el mismo trabajo.
+www=id del worker representado con sus 3 últimos dígitos. Un trabajador solo puede solicitar una vez un trabajo
+determinado.

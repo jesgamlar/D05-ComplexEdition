@@ -141,8 +141,8 @@
     </bean>
     
     <bean name="worker1Worker" class="acme.entities.roles.Worker">
-    	<property name="company" value="Employer I, Inc." />
-    	<property name="sector" value="Sector I" />
+    	<property name="skillsRecord" value="Sample Skills 1" />
+    	<property name="qualificationsRecord" value="Sample Qualifictaions 1" />
     	<property name="userAccount" ref="worker1UserAccount" />
     </bean>
     
@@ -172,8 +172,8 @@
     </bean>
     
     <bean name="worker2Worker" class="acme.entities.roles.Worker">
-    	<property name="company" value="Employer II, Inc." />
-    	<property name="sector" value="Sector II" />
+    	<property name="skillsRecord" value="Sample Skills 2" />
+    	<property name="qualificationsRecord" value="Sample Qualifictaions 2" />
     	<property name="userAccount" ref="worker2UserAccount" />
     </bean>
     

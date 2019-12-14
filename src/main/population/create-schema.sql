@@ -333,8 +333,8 @@
        `id` integer not null,
         `version` integer not null,
         `user_account_id` integer,
-        `company` varchar(255),
-        `sector` varchar(255),
+        `qualifications_record` varchar(255),
+        `skills_record` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -343,6 +343,7 @@
     ) engine=InnoDB;
 
     insert into `hibernate_sequence` values ( 1 );
+create index IDXnlv6ege1ixororpblu3lctiev on `application` (`reference_number`);
 
     alter table `application` 
        add constraint UK_rf84q38qr35ymh5nn0dcxfdue unique (`reference_number`);

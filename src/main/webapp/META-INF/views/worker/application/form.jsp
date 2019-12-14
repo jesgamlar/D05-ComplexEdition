@@ -21,31 +21,18 @@
 		<acme:form-textbox code="worker.application.form.label.referenceNumber" path="referenceNumber" readonly="true" />
 		<acme:form-textbox code="worker.application.form.label.jobTitle" path="jobTitle" readonly="true"/>
 		<acme:form-moment code="worker.application.form.label.moment" path="moment" readonly="true"/>
+		<acme:form-textarea code="worker.application.form.label.skills" path="skills" readonly="true"/>
+		<acme:form-textarea code="worker.application.form.label.qualifications" path="qualifications" readonly="true"/>
 	</jstl:if>
 
 	<acme:form-textbox code="worker.application.form.label.statement" path="statement"/>
-	<acme:form-textarea code="worker.application.form.label.skills" path="skills"/>
-	<acme:form-textarea code="worker.application.form.label.qualifications" path="qualifications"/>
 	
-	<p id="submit"></p>
+	<acme:form-submit test="${command == 'create'}"
+			code='worker.application.form.button.create'
+			action='/worker/application/create?jobid=${param.jobid}' />
 	
 	<acme:form-return code="worker.application.form.button.return"/>
 	
 	
-	
-	<script type="text/javascript">
-		$(document).ready(function() {
-			
-			var jobid = (window.location.href).split("?jobid=")[1];
-			
-			var submit = `<acme:form-submit test="${command == 'create'}"
-				code='worker.application.form.button.create'
-				action='/worker/application/create?jobid=`+jobid+`' />`;
-				
-			document.getElementById("submit").innerHTML = submit;
-			
-		});
-	</script>
-	
-	
+		
 </acme:form>
