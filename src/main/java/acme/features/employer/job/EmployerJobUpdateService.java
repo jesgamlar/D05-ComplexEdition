@@ -1,6 +1,7 @@
 
 package acme.features.employer.job;
 
+import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
@@ -90,17 +91,20 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 
 		if (!errors.hasErrors("deadline")) {
 			Date currentDate = new Date(System.currentTimeMillis());
-			errors.state(request, entity.getDeadline().after(currentDate), "deadline", "employer.job.form.error.deadline");
+			Calendar calendar = Calendar.getInstance();
+			calendar.setTime(currentDate);
+			calendar.add(Calendar.DAY_OF_YEAR, 7);
+			errors.state(request, entity.getDeadline().after(calendar.getTime()), "deadline", "employer.job.form.error.deadline");
 		}
 
 		if (entity.getStatus() == "Published") {
 			if (!errors.hasErrors("description")) {
-				int threshold = this.repository.findThreshold();
+				double threshold = this.repository.findThreshold();
 				String[] spanishWords = this.repository.findSpanishWords().split(", ");
 				String[] englishWords = this.repository.findEnglishWords().split(", ");
-				int numberWordsDescription = entity.getDescription().split("\\s|\\.|\\,").length + 1;
+				double numberWordsDescription = entity.getDescription().split("\\s|\\.|\\,").length;
 
-				int spamWords = 0;
+				double spamWords = 0.;
 				for (String s : spanishWords) {
 					if (entity.getDescription().contains(s)) {
 						spamWords++;
@@ -117,16 +121,20 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 			}
 
 			int id = request.getModel().getInteger("id");
-			List<Double> listTime = this.repository.findTimexWeekThisJob(id);
-			Double count = 0.;
-			for (Double c : listTime) {
-				count += c;
+
+			if (!errors.hasErrors("reference")) {
+				Collection<Duty> listDuties = this.repository.findManyDutiesByJobId(id);
+				errors.state(request, !listDuties.isEmpty(), "reference", "employer.job.form.error.noDuties");
 			}
-			errors.state(request, count == 100, "reference", "employer.job.form.error.no100");
 
-			Collection<Duty> listDuties = this.repository.findManyDutiesByJobId(id);
-			errors.state(request, !listDuties.isEmpty(), "reference", "employer.job.form.error.noDuties");
-
+			if (!errors.hasErrors("reference")) {
+				List<Double> listTime = this.repository.findTimexWeekThisJob(id);
+				Double count = 0.;
+				for (Double c : listTime) {
+					count += c;
+				}
+				errors.state(request, count == 100, "reference", "employer.job.form.error.no100");
+			}
 		}
 	}
 

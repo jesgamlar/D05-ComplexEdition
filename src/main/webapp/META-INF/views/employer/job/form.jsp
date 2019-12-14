@@ -39,7 +39,8 @@
 	<acme:form-submit test="${command == 'update'}"
 		code="employer.job.form.button.update"
 		action="/employer/job/update"/>
-	<acme:check-access test="${empty auditRecords }">
+		
+	<acme:check-access test="${removable}">
 		<acme:form-submit test="${command == 'show'}"
 			code="employer.job.form.button.delete"
 			action="/employer/job/delete"/>

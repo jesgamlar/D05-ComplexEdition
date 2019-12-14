@@ -27,7 +27,7 @@ employer.job.form.error.spamDescription = Esto es considerado una descripción n
 employer.job.form.error.no100 = Las cargas de trabajo semanales de las tareas deben sumar un 100%
 employer.job.form.error.noDuties = El trabajo debe tener al menos una tarea
 employer.job.form.error.reference = Ya hay un trabajo con esa referencia
-employer.job.form.error.deadline = La fecha límite debe ser futura
+employer.job.form.error.deadline = La fecha límite debe ser de al menos una semana
 
 employer.job.list.label.reference = Referencia
 employer.job.list.label.title = Título

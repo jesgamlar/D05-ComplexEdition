@@ -28,7 +28,7 @@ public interface EmployerJobRepository extends AbstractRepository {
 	List<Integer> findJobsWithApplications();
 
 	@Query("select s.threshold from Spam s")
-	Integer findThreshold();
+	double findThreshold();
 
 	@Query("select s.spanishWords from Spam s")
 	String findSpanishWords();
