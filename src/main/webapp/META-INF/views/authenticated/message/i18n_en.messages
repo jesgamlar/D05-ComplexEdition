@@ -14,6 +14,12 @@ authenticated.message.form.label.tags = Tags:
 authenticated.message.form.label.body = Body:
 authenticated.message.form.label.messageThreadTitle = Message Thread:
 authenticated.message.form.button.return = Return
+authenticated.message.form.button.create = Create
+authenticated.messages.form.label.checkbox = Confirm
+authenticated.message.form.error.accept = Please, confirm the post
+authenticated.message.form.error.spamDescription = This is considered a spam message
 
 authenticated.message.list.label.moment = Moment
 authenticated.message.list.label.title = Title
+authenticated.message.list.button.return = Return
+authenticated.message.list.button.create = Create
