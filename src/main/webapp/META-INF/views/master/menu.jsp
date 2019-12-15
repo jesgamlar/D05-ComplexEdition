@@ -72,6 +72,7 @@
 			<acme:menu-suboption code="master.menu.administrator.listChallenge.create" action="/administrator/challenge/create"/>
      		<acme:menu-suboption code="master.menu.administrator.companyRecordsChart" action="/administrator/companies-investors-chart/chart"/>
       		<acme:menu-suboption code="master.menu.administrator.jobsApplicationsChart" action="/administrator/jobs-application-chart/chart"/>
+      		<acme:menu-suboption code="master.menu.administrator.applicationsPerDayChart" action="/administrator/applications-per-day-chart/chart"/>
       		<acme:menu-suboption code="master.menu.administrator.listData" action="/administrator/list-data/list-mine"/>
       		<acme:menu-suboption code="master.menu.administrator.listDataEmployerWorker" action="/administrator/list-data-employer-worker/list-mine"/>
       

@@ -399,7 +399,7 @@
     
     <bean name="application01" class="acme.entities.applications.Application">
     	<property name="referenceNumber" value="WOR1-APP1" />
-    	<property name="moment" value="2018/12/12 23:00" />
+    	<property name="moment" value="2019/12/12 23:00" />
     	<property name="statement" value="example statement" />
     	<property name="skills" value="example skills" />
     	<property name="qualifications" value="example qualifications" />
@@ -410,7 +410,7 @@
     
     <bean name="application02" class="acme.entities.applications.Application">
     	<property name="referenceNumber" value="WOR1-APP2" />
-    	<property name="moment" value="2015/10/19 21:00" />
+    	<property name="moment" value="2019/12/12 21:00" />
     	<property name="statement" value="example statement" />
     	<property name="skills" value="example skills" />
     	<property name="qualifications" value="example qualifications" />
@@ -421,7 +421,55 @@
     
     <bean name="application03" class="acme.entities.applications.Application">
     	<property name="referenceNumber" value="WOR2-APP1" />
-    	<property name="moment" value="2018/12/12 23:00" />
+    	<property name="moment" value="2019/12/12 23:00" />
+    	<property name="statement" value="example statement" />
+    	<property name="skills" value="example skills" />
+    	<property name="qualifications" value="example qualifications" />
+    	<property name="status" value="ACCEPTED" />
+    	<property name="worker" ref="worker2Worker" />
+    	<property name="job" ref="job02" />
+    </bean>
+    
+    <bean name="application04" class="acme.entities.applications.Application">
+    	<property name="referenceNumber" value="WOR2-APP2" />
+    	<property name="moment" value="2019/12/09 21:00" />
+    	<property name="statement" value="example statement" />
+    	<property name="skills" value="example skills" />
+    	<property name="qualifications" value="example qualifications" />
+    	<property name="status" value="ACCEPTED" />
+    	<property name="worker" ref="worker2Worker" />
+    	<property name="job" ref="job03" />
+    </bean>
+    
+    
+    
+    
+    
+    <bean name="application05" class="acme.entities.applications.Application">
+    	<property name="referenceNumber" value="WOR1-APP5" />
+    	<property name="moment" value="2019/12/12 23:00" />
+    	<property name="statement" value="example statement" />
+    	<property name="skills" value="example skills" />
+    	<property name="qualifications" value="example qualifications" />
+    	<property name="status" value="PENDING" />
+    	<property name="worker" ref="worker1Worker" />
+    	<property name="job" ref="job01" />
+    </bean>
+    
+    <bean name="application06" class="acme.entities.applications.Application">
+    	<property name="referenceNumber" value="WOR1-APP6" />
+    	<property name="moment" value="2019/12/12 21:00" />
+    	<property name="statement" value="example statement" />
+    	<property name="skills" value="example skills" />
+    	<property name="qualifications" value="example qualifications" />
+    	<property name="status" value="REJECTED" />
+    	<property name="worker" ref="worker1Worker" />
+    	<property name="job" ref="job02" />
+    </bean>
+    
+    <bean name="application07" class="acme.entities.applications.Application">
+    	<property name="referenceNumber" value="WOR2-APP7" />
+    	<property name="moment" value="2019/12/11 23:00" />
     	<property name="statement" value="example statement" />
     	<property name="skills" value="example skills" />
     	<property name="qualifications" value="example qualifications" />
@@ -430,8 +478,8 @@
     	<property name="job" ref="job02" />
     </bean>
     
-    <bean name="application04" class="acme.entities.applications.Application">
-    	<property name="referenceNumber" value="WOR2-APP2" />
+    <bean name="application08" class="acme.entities.applications.Application">
+    	<property name="referenceNumber" value="WOR2-APP8" />
     	<property name="moment" value="2015/10/19 21:00" />
     	<property name="statement" value="example statement" />
     	<property name="skills" value="example skills" />
@@ -440,6 +488,10 @@
     	<property name="worker" ref="worker2Worker" />
     	<property name="job" ref="job03" />
     </bean>
+    
+    
+    
+    
 
 
 	<!-- Challenges -->

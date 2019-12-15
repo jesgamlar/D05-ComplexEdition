@@ -16,7 +16,7 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <h2>
-	<acme:message code="administrator.charts.form.title"/>
+	<acme:message code="administrator.charts.form.applications"/>
 </h2>
 
 <div>
@@ -27,35 +27,51 @@
 	$(document).ready(function() {
 		
 		var data = {
-				labels: [
-					<jstl:forEach var="label" items="${companiesSectors.keySet()}">
-						"<jstl:out value="${label}"/>",
-					</jstl:forEach>
+				labels: [ <jstl:forEach var="label" items="${applicationsDates}">
+							"<jstl:out value="${label.toString().split(' ')[0]}"/>",
+						  </jstl:forEach>
+					
 				],
 				datasets: [
-					{	label:"Companies",
+					{	label:"<acme:message code="administrator.charts.form.applications.pending"/>",
 						data : [
-							<jstl:forEach var="label" items="${companiesSectors.keySet()}">
-								"<jstl:out value="${companiesSectors.get(label)}"/>",
+							<jstl:forEach var="label" items="${applicationsDates}">
+								"<jstl:out value="${pendingApplications.get(label)}"/>",
 							</jstl:forEach>
-						]
-					},{	label:"Investors",
+						],
+						borderColor: [
+					          "#f38b4a"
+					        ]
+					},{	label:"<acme:message code="administrator.charts.form.applications.accepted"/>",
 						data : [
-							<jstl:forEach var="label" items="${companiesSectors.keySet()}">
-								"<jstl:out value="${investorsSectors.get(label)}"/>",
+							<jstl:forEach var="label" items="${applicationsDates}">
+								"<jstl:out value="${acceptedApplications.get(label)}"/>",
 							</jstl:forEach>
-						]
+						],
+						borderColor: [
+					          "#56d798"
+					        ]
+					},{	label:"<acme:message code="administrator.charts.form.applications.rejected"/>",
+						data : [
+							<jstl:forEach var="label" items="${applicationsDates}">
+								"<jstl:out value="${rejectedApplications.get(label)}"/>",
+							</jstl:forEach>
+						],
+						borderColor: [
+					          "#ff8397"
+					        ]
 					}
 				]
 		};
 		
+			
 		var options = {
 				scales : {
 					yAxes : [
 						{
 							ticks: {
 								suggestedMin : 0.0,
-								suggestedMax : 7.0
+								suggestedMax : 5.0
 							}
 						}
 					]
@@ -63,15 +79,14 @@
 				legend : {
 					display : true
 				}
-		};		
-		
+		};
 	
 		var canvas, context;
-	
+		
 		canvas = document.getElementById("canvas");
 		context = canvas.getContext("2d");
 		new Chart(context, {
-			type : "bar",
+			type : "line",
 			data : data,
 			options : options
 		});
