@@ -11,16 +11,27 @@
 
 employer.job.form.label.title = Título:
 employer.job.form.label.moreInfo = Más Información:
-employer.job.form.label.status = Estado:
+employer.job.form.label.status = Publicar
 employer.job.form.label.salary = Salario:
 employer.job.form.label.deadline = Fecha límite:
 employer.job.form.label.reference = Referencia:
 employer.job.form.label.description = Descripción:
 employer.job.form.button.return = Volver
+employer.job.form.button.update = Actualizar
 employer.job.form.button.listDuties = Listar Tareas
+employer.job.form.button.createDuties = Crear Tareas
+employer.job.form.button.createJob = Crear Trabajo
+employer.job.form.button.delete = Eliminar
+employer.job.form.error.delete = Este trabajo no puede ser borrado porque tiene solicitud(es)
+employer.job.form.error.spamDescription = Esto es considerado una descripción no deseada
+employer.job.form.error.no100 = Las cargas de trabajo semanales de las tareas deben sumar un 100%
+employer.job.form.error.noDuties = El trabajo debe tener al menos una tarea
+employer.job.form.error.reference = Ya hay un trabajo con esa referencia
+employer.job.form.error.deadline = La fecha límite debe ser de al menos una semana
 
 employer.job.list.label.reference = Referencia
 employer.job.list.label.title = Título
 employer.job.list.label.deadline = Fecha límite
 employer.job.list.label.status = Estado
+employer.job.list.button.createJob = Crear Trabajo
 
