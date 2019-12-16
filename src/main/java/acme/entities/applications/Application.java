@@ -65,7 +65,6 @@ public class Application extends DomainEntity {
 	//@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-
 	private Job					job;
 
 
