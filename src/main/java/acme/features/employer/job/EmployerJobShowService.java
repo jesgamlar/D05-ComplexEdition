@@ -1,6 +1,8 @@
 
 package acme.features.employer.job;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -47,8 +49,14 @@ public class EmployerJobShowService implements AbstractShowService<Employer, Job
 		assert entity != null;
 		assert model != null;
 
+		List<Integer> ids = this.repository.findJobsWithApplications();
+		int idThisJob = request.getModel().getInteger("id");
+		boolean removable = !ids.contains(idThisJob);
+		request.getModel().setAttribute("removable", removable);
+
 		request.unbind(entity, model, "reference", "title", "deadline");
 		request.unbind(entity, model, "salary", "moreInfo", "description", "finalMode");
+
 	}
 
 	@Override

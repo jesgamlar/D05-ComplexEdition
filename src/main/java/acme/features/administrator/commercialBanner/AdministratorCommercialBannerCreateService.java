@@ -105,7 +105,6 @@ public class AdministratorCommercialBannerCreateService implements AbstractCreat
 	public void create(final Request<CommercialBanner> request, final CommercialBanner entity) {
 		assert request != null;
 		assert entity != null;
-		;
 
 		this.repository.save(entity);
 	}

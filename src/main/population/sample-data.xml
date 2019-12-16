@@ -311,6 +311,11 @@
 				<ref bean="AuditRecord02"/>
 			</list>
 		</property>
+		<property name="applications"> 
+			<list>
+				<ref bean="application01"/>
+			</list>
+		</property>
     	<property name="finalMode" value="true" />
     	<property name="employer" ref="employer1Employer" />
     </bean>
@@ -322,7 +327,6 @@
     	<property name="salary" ref="reward02" />
     	<property name="description" value="Description" />
     	<property name="moreInfo" value="http://www.example.com" />
-
     	<property name="duties"> 
 			<list>
 				<ref bean="duty04"/>
@@ -331,6 +335,12 @@
 		<property name="auditRecords"> 
 			<list>
 				<ref bean="AuditRecord03"/>
+			</list>
+		</property>
+		<property name="applications"> 
+			<list>
+				<ref bean="application02"/>
+				<ref bean="application03"/>
 			</list>
 		</property>
     	<property name="finalMode" value="false" />
@@ -351,6 +361,11 @@
 		</property>
 		<property name="auditRecords"> 
 			<list>
+			</list>
+		</property>
+		<property name="applications"> 
+			<list>
+				<ref bean="application04"/>
 			</list>
 		</property>
     	<property name="finalMode" value="true" />
@@ -398,45 +413,45 @@
 	<!-- Applications -->
     
     <bean name="application01" class="acme.entities.applications.Application">
-    	<property name="referenceNumber" value="WOR1-APP1" />
+    	<property name="referenceNumber" value="EMP1-JOB1:WOR1" />
     	<property name="moment" value="2018/12/12 23:00" />
     	<property name="statement" value="example statement" />
     	<property name="skills" value="example skills" />
     	<property name="qualifications" value="example qualifications" />
-    	<property name="finalMode" value="true" />
+    	<property name="status" value="PENDING" />
     	<property name="worker" ref="worker1Worker" />
     	<property name="job" ref="job01" />
     </bean>
     
     <bean name="application02" class="acme.entities.applications.Application">
-    	<property name="referenceNumber" value="WOR1-APP2" />
+    	<property name="referenceNumber" value="EMP1-JOB2:WOR1" />
     	<property name="moment" value="2015/10/19 21:00" />
     	<property name="statement" value="example statement" />
     	<property name="skills" value="example skills" />
     	<property name="qualifications" value="example qualifications" />
-    	<property name="finalMode" value="false" />
+    	<property name="status" value="REJECTED" />
     	<property name="worker" ref="worker1Worker" />
     	<property name="job" ref="job02" />
     </bean>
     
     <bean name="application03" class="acme.entities.applications.Application">
-    	<property name="referenceNumber" value="WOR2-APP1" />
+    	<property name="referenceNumber" value="EMP1-JOB2:WOR2" />
     	<property name="moment" value="2018/12/12 23:00" />
     	<property name="statement" value="example statement" />
     	<property name="skills" value="example skills" />
     	<property name="qualifications" value="example qualifications" />
-    	<property name="finalMode" value="true" />
+    	<property name="status" value="PENDING" />
     	<property name="worker" ref="worker2Worker" />
     	<property name="job" ref="job02" />
     </bean>
     
     <bean name="application04" class="acme.entities.applications.Application">
-    	<property name="referenceNumber" value="WOR2-APP2" />
+    	<property name="referenceNumber" value="EMP2-JOB1:WOR2" />
     	<property name="moment" value="2015/10/19 21:00" />
     	<property name="statement" value="example statement" />
     	<property name="skills" value="example skills" />
     	<property name="qualifications" value="example qualifications" />
-    	<property name="finalMode" value="true" />
+    	<property name="status" value="ACCEPTED" />
     	<property name="worker" ref="worker2Worker" />
     	<property name="job" ref="job03" />
     </bean>

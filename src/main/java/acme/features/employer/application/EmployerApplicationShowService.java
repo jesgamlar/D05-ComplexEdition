@@ -5,8 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.applications.Application;
+import acme.entities.jobs.Job;
 import acme.entities.roles.Employer;
-import acme.entities.roles.Worker;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Principal;
@@ -32,9 +32,11 @@ public class EmployerApplicationShowService implements AbstractShowService<Emplo
 
 		int appId = request.getModel().getInteger("id");
 		Application app = this.repository.findOneApplicationById(appId);
-		Worker worker = app.getWorker();
+		Job job = app.getJob();
+		Employer employer = job.getEmployer();
+
 		principal = request.getPrincipal();
-		result = app.isFinalMode() || !app.isFinalMode() && worker.getUserAccount().getId() == principal.getAccountId();
+		result = employer.getUserAccount().getId() == principal.getAccountId();
 
 		return result;
 	}
@@ -46,7 +48,7 @@ public class EmployerApplicationShowService implements AbstractShowService<Emplo
 		assert model != null;
 
 		request.unbind(entity, model, "referenceNumber", "moment", "statement");
-		request.unbind(entity, model, "skills", "qualifications", "finalMode");
+		request.unbind(entity, model, "skills", "qualifications", "status");
 	}
 
 	@Override

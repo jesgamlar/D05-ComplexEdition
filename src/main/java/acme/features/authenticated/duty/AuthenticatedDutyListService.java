@@ -46,7 +46,7 @@ public class AuthenticatedDutyListService implements AbstractListService<Authent
 		Collection<Duty> result;
 		int id = request.getModel().getInteger("id");
 
-		result = this.repository.findManyByJobId(id);
+		result = this.repository.findManyByDutyId(id);
 
 		return result;
 	}

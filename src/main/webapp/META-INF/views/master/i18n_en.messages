@@ -91,7 +91,7 @@ master.menu.worker.application.list = Applications
 
 master.menu.employer = Empleador
 
-master.menu.employer.application.list = Applications
+master.menu.employer.application.list = Applications To My Jobs
 master.menu.employer.job.list = My Jobs
 
 # master.menu.sponsor ########################################################
@@ -128,6 +128,10 @@ master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
 master.menu.user-account.auditor = Auditor data
 master.menu.user-account.become-auditor = Become a auditor
+master.menu.user-account.employer = Employer data
+master.menu.user-account.become-employer = Become a employer
+master.menu.user-account.worker = Worker data
+master.menu.user-account.become-worker = Become a worker
 
 # master.footer ###############################################################
 

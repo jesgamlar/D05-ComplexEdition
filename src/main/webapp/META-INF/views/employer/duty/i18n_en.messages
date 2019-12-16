@@ -12,6 +12,10 @@ employer.duty.form.label.title = Title:
 employer.duty.form.label.description = Description:
 employer.duty.form.label.timexWeek = Time per Week:
 employer.duty.form.button.return = Return
+employer.duty.form.button.create = Create Duty
+employer.duty.form.button.delete = Delete Duty
+employer.duty.form.button.update = Update Duty
+employer.duty.form.error.timexWeekRestriction = The weekly workload must be between 0.01 and 100.00
 
 employer.duty.list.label.title = Title
 employer.duty.list.label.timexWeek = Time per Week

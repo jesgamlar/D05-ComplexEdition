@@ -20,18 +20,15 @@
 </h2>
 
 <div>
-	<canvas id="canvas"></canvas>
+	<canvas id="canvasJobs"></canvas>
+	<canvas id="canvasApplications"></canvas>
 </div>
 
 <script type="text/javascript">
 	$(document).ready(function() {
 		
-		var data = {
+		var dataJobs = {
 				labels: [ "Draft", "Published"
-					
-					
-				
-					
 					
 				],
 				datasets: [
@@ -41,15 +38,25 @@
 								"<jstl:out value="${jobsStatus.get(label)}"/>",
 							</jstl:forEach>
 						]
-					},{	label:"Applications",
+					}
+				]
+		};
+		
+		var dataApplications = {
+				labels: [ "Accepted", "Pending", "Rejected"
+					
+				],
+				datasets: [
+					{	label:"Applications",
 						data : [
-							<jstl:forEach var="label" items="${jobsStatus.keySet()}">
+							<jstl:forEach var="label" items="${applicationStatus.keySet()}">
 								"<jstl:out value="${applicationStatus.get(label)}"/>",
 							</jstl:forEach>
 						]
 					}
 				]
 		};
+			
 		var options = {
 				scales : {
 					yAxes : [
@@ -66,13 +73,21 @@
 				}
 		};
 	
-		var canvas, context;
+		var canvasJobs, contextJobs, canvasApplications, contextApplications;
 	
-		canvas = document.getElementById("canvas");
-		context = canvas.getContext("2d");
-		new Chart(context, {
+		canvasJobs = document.getElementById("canvasJobs");
+		contextJobs = canvasJobs.getContext("2d");
+		new Chart(contextJobs, {
 			type : "bar",
-			data : data,
+			data : dataJobs,
+			options : options
+		});
+		
+		canvasApplications = document.getElementById("canvasApplications");
+		contextApplications = canvasApplications.getContext("2d");
+		new Chart(contextApplications, {
+			type : "bar",
+			data : dataApplications,
 			options : options
 		});
 	});
