@@ -64,7 +64,7 @@ public class AuthenticatedMessageThreadCreateService implements AbstractCreateSe
 		assert errors != null;
 	}
 
-	@SuppressWarnings("unchecked")
+	//@SuppressWarnings("unchecked")
 	@Override
 	public void create(final Request<MessageThread> request, final MessageThread entity) {
 		assert request != null;
@@ -83,11 +83,16 @@ public class AuthenticatedMessageThreadCreateService implements AbstractCreateSe
 		//-----------------------------------------------------------------
 
 		List<UserThread> users = new ArrayList<>();
-		users = (List<UserThread>) request.getModel().getAttribute("users");
+		UserThread userThreadStarter = new UserThread();
+		userThreadStarter.setMessageThread(entity);
+		userThreadStarter.setUser(authenticated);
+		users.add(userThreadStarter);
 
 		entity.setUsers(users);
 
 		this.repository.save(entity);
+		this.repository.save(userThreadStarter);
+
 	}
 
 }

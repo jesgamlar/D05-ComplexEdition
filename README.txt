@@ -29,3 +29,7 @@ eee=id del employer representado con sus 3 últimos dígitos; jjj=id del job rep
 www=id del worker representado con sus 3 últimos dígitos; d=dígito de diferencia por si un worker solicita más de una
 vez el mismo trabajo.
 
+TASK 006: Un usuario autenticado podrá administrar los usuarios de sus cadenas de mensaje en la vista correspondiente al show
+de esa cadena de mensajes. Tendrá un botón para listar los participantes de esa cadena y podrá añadir nuevos y borrar los ya existentes
+(el botón para borrar se encuentra en el show de cada participante).
+
