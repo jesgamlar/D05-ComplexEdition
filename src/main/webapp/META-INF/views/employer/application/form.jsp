@@ -22,5 +22,11 @@
 	<acme:form-textarea code="employer.application.form.label.skills" path="skills"/>
 	<acme:form-textarea code="employer.application.form.label.qualifications" path="qualifications"/>
 	
+	<acme:form-submit test="${command == 'listMine'}"
+
+		code="employer.application.form.button.listMine"
+
+		action="/employer/application/listMine"/>
+	
 	<acme:form-return code="employer.application.form.button.return"/>
 </acme:form>
