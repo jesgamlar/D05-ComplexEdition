@@ -48,10 +48,10 @@ public class Application extends DomainEntity {
 	@NotBlank
 	private String				statement;
 
-	@NotBlank
+	//@NotBlank
 	private String				skills;
 
-	@NotBlank
+	//@NotBlank
 	private String				qualifications;
 
 	//@NotNull
@@ -65,7 +65,6 @@ public class Application extends DomainEntity {
 	//@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-
 	private Job					job;
 
 

@@ -14,6 +14,12 @@ authenticated.message.form.label.tags = Etiquetas:
 authenticated.message.form.label.body = Cuerpo:
 authenticated.message.form.label.messageThreadTitle = Cadena de mensajes:
 authenticated.message.form.button.return = Volver
+authenticated.message.form.button.create = Crear
+authenticated.messages.form.label.checkbox = Confirmar
+authenticated.message.form.error.accept = Por favor, confirma el envío 
+authenticated.message.form.error.spamDescription = Esto es considerado un mensaje no deseado
 
 authenticated.message.list.label.moment = Momento
 authenticated.message.list.label.title = Título
+authenticated.message.list.button.return = Volver
+authenticated.message.list.button.create = Crear

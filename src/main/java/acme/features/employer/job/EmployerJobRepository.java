@@ -28,7 +28,7 @@ public interface EmployerJobRepository extends AbstractRepository {
 	List<Integer> findJobsWithApplications();
 
 	@Query("select s.threshold from Spam s")
-	Integer findThreshold();
+	double findThreshold();
 
 	@Query("select s.spanishWords from Spam s")
 	String findSpanishWords();
@@ -36,9 +36,18 @@ public interface EmployerJobRepository extends AbstractRepository {
 	@Query("select s.englishWords from Spam s")
 	String findEnglishWords();
 
+	@Query("select j.reference from Job j")
+	List<String> findReferences();
+
 	@Query("select d.timexWeek from Duty d where d.job.id = ?1")
 	List<Double> findTimexWeekThisJob(int jobId);
 
 	@Query("select d from Duty d where d.job.id = ?1")
 	Collection<Duty> findManyDutiesByJobId(int id);
+
+	@Query("select j.reference from Job j where j.id = ?1")
+	String findOneJobReferenceById(int id);
+
+	@Query("select j.finalMode from Job j where j.id = ?1")
+	boolean findOneJobStatusById(int id);
 }

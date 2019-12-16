@@ -33,7 +33,24 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 	public boolean authorise(final Request<Application> request) {
 		assert request != null;
 
-		return true;
+		boolean result = true;
+		Principal principal = request.getPrincipal();
+
+		String jobIdString = request.getServletRequest().getQueryString().split("jobid=")[1];
+
+		int jobId = Integer.parseInt(jobIdString);
+
+		Collection<Application> applications = this.repository.findManyByWorkerId(principal.getActiveRoleId());
+
+		for (Application a : applications) {
+			if (a.getJob().getId() == jobId) {
+				result = false;
+				break;
+			}
+		}
+
+		return result;
+
 	}
 
 	@Override
@@ -42,7 +59,7 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "referenceNumber", "moment", "status", "worker", "job");
+		request.bind(entity, errors, "referenceNumber", "moment", "status", "worker", "job", "skills", "qualifications");
 
 	}
 
@@ -52,7 +69,7 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "statement", "skills", "qualifications");
+		request.unbind(entity, model, "statement");
 
 	}
 
@@ -97,6 +114,12 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		moment = new Date(System.currentTimeMillis() - 1);
 		entity.setMoment(moment);
 
+		//Skills
+		entity.setSkills(worker.getSkillsRecord());
+
+		//Qualifications
+		entity.setQualifications(worker.getQualificationsRecord());
+
 		//Reference number
 		Employer employer = job.getEmployer();
 		String employerId = "" + employer.getId();
@@ -121,11 +144,7 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 
 		String rNumber = emp + "-" + wor + ":" + jobb;
 
-		Collection<Application> applicationSameRNumber = this.repository.findManyByRnumber(rNumber);
-
-		String rNumberFinal = rNumber + applicationSameRNumber.size();
-
-		entity.setReferenceNumber(rNumberFinal);
+		entity.setReferenceNumber(rNumber);
 
 		this.repository.save(entity);
 	}

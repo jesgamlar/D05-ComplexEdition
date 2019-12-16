@@ -92,7 +92,7 @@ master.menu.worker.application.list = Applications
 
 master.menu.employer = Empleador
 
-master.menu.employer.application.list = Applications
+master.menu.employer.application.list = Applications To My Jobs
 master.menu.employer.job.list = My Jobs
 
 # master.menu.sponsor ########################################################

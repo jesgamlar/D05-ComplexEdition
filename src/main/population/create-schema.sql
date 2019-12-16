@@ -333,8 +333,8 @@
        `id` integer not null,
         `version` integer not null,
         `user_account_id` integer,
-        `company` varchar(255),
-        `sector` varchar(255),
+        `qualifications_record` varchar(255),
+        `skills_record` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
 
