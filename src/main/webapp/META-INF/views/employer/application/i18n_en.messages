@@ -14,6 +14,12 @@ employer.application.form.label.moment = Moment:
 employer.application.form.label.statement = Statement:
 employer.application.form.label.skills = Skills:
 employer.application.form.label.qualifications = Qualifications:
+employer.application.form.label.accept = Accept Application
+employer.application.form.label.reject = Reject Application
+employer.application.form.label.justification = Reject Justification
+employer.application.form.error.acceptAndReject = Both "Accept" and "Reject" can't be selected
+employer.application.form.error.reject = You must justify the rejection of the application 
+employer.application.form.button.update = Update
 
 employer.application.list.label.referenceNumber = Reference number
 employer.application.list.label.title = Statement

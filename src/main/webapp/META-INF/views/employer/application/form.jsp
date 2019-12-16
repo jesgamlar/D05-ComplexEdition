@@ -16,17 +16,24 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:form-textbox code="employer.application.form.label.referenceNumber" path="referenceNumber"/>
-	<acme:form-moment code="employer.application.form.label.moment" path="moment"/>
-	<acme:form-textbox code="employer.application.form.label.statement" path="statement"/>
-	<acme:form-textarea code="employer.application.form.label.skills" path="skills"/>
-	<acme:form-textarea code="employer.application.form.label.qualifications" path="qualifications"/>
+	<acme:form-textbox readonly="true" code="employer.application.form.label.referenceNumber" path="referenceNumber"/>
+	<acme:form-moment readonly="true" code="employer.application.form.label.moment" path="moment"/>
+	<acme:form-textbox readonly="true" code="employer.application.form.label.statement" path="statement"/>
+	<acme:form-textarea readonly="true" code="employer.application.form.label.skills" path="skills"/>
+	<acme:form-textarea readonly="true" code="employer.application.form.label.qualifications" path="qualifications"/>
+	<acme:form-checkbox code="employer.application.form.label.accept" path="accept"/>
+	<acme:form-checkbox code="employer.application.form.label.reject" path="reject"/>
+	<acme:form-textarea code="employer.application.form.label.justification" path="rejectJustification"/>
 	
-	<acme:form-submit test="${command == 'listMine'}"
-
-		code="employer.application.form.button.listMine"
-
+	<acme:form-submit test="${command == 'listMine'}" 
+		code="employer.application.form.button.listMine" 
 		action="/employer/application/listMine"/>
+	<acme:form-submit test="${command == 'show'}"
+		code="employer.application.form.button.update"
+		action="/employer/application/update"/>
+	<acme:form-submit test="${command == 'update'}"
+		code="employer.application.form.button.update"
+		action="/employer/application/update"/>
 	
 	<acme:form-return code="employer.application.form.button.return"/>
 </acme:form>
