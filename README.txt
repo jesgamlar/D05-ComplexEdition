@@ -23,6 +23,9 @@ job, le saldrá un botón con la opción de 'apply for this job'.
 
 TASK 004: El reference number de las applications tiene el siguiente patrón: Eeee-Jjjj:Wwwwd. E=E; J=J; W=W;
 eee=id del employer representado con sus 3 últimos dígitos; jjj=id del job representado con sus 3 últimos dígitos;
+www=id del worker representado con sus 3 últimos dígitos. Un trabajador solo puede solicitar un mismo trabajo una vez.
 
-www=id del worker representado con sus 3 últimos dígitos. Un trabajador solo puede solicitar una vez un trabajo
-determinado.
+
+TASK 011: Se ha interpretado que se pide que el gráfico muestre el número de nuevas solicitudes que se han creado en cada día 
+y que estas estén organizadas según su estado.
+
