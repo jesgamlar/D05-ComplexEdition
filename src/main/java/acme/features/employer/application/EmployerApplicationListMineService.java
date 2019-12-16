@@ -16,6 +16,7 @@ import acme.framework.services.AbstractListService;
 public class EmployerApplicationListMineService implements AbstractListService<Employer, Application> {
 
 	//Internal state --------------------------------------------------
+	//
 
 	@Autowired
 	EmployerApplicationRepository repository;
