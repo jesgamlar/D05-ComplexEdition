@@ -57,6 +57,8 @@ public class Application extends DomainEntity {
 	//@NotNull
 	private ApplicationStatus	status;
 
+	private String				justification;
+
 	//@NotNull
 	@Valid
 	@ManyToOne(optional = false)
