@@ -63,6 +63,10 @@
        drop 
        foreign key FK_b1gwnjqm6ggy9yuiqm0o4rlmd;
 
+    alter table `request_auditor` 
+       drop 
+       foreign key `FKg9gmiivm111rnb6yd8eq82kbk`;
+
     alter table `sponsor` 
        drop 
        foreign key `FK28mvxtnmfjcwiw34vs8ryqkpa`;
@@ -132,6 +136,8 @@
     drop table if exists `offer`;
 
     drop table if exists `provider`;
+
+    drop table if exists `request_auditor`;
 
     drop table if exists `request_entity`;
 

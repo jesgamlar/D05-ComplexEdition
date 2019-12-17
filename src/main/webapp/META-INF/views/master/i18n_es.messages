@@ -73,6 +73,7 @@ master.menu.administrator.commercial-banner = Banners Comerciales
 master.menu.administrator.non-commercial-banner = Banners No Comerciales
 master.menu.administrator.listChallenge = Retos
 master.menu.administrator.investorRecord = Registro de Inversores
+master.menu.administrator.listRequestAuditor = Peticiones de Auditor
 
 master.menu.administrator.listDataEmployerWorker = Listar Datos de empleadores y trabajadores
 master.menu.administrator.jobsApplicationsChart = Gráfico de Trabajos y Solicitudes

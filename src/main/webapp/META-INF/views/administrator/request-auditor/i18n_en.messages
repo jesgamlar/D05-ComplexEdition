@@ -8,10 +8,11 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.auditor.form.title.update = Update your auditor data
+administrator.requestAuditor.list.label.firm = Firm
+administrator.requestAuditor.list.label.responsibilityStatement = Responsibility Statement
 
-authenticated.auditor.form.label.firm = Firm
-authenticated.auditor.form.label.responsibilityStatement = Responsibility Statement
+administrator.requestAuditor.form.label.firm = Firm:
+administrator.requestAuditor.form.label.responsibilityStatement = Responsibility Statement:
 
-authenticated.auditor.form.button.update = Update
-authenticated.auditor.form.button.return = Return
+administrator.requestAuditor.form.button.delete = Acept
+administrator.requestAuditor.form.button.return = Return
