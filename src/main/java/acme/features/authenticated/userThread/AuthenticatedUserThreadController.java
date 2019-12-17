@@ -1,5 +1,5 @@
 
-package acme.features.authenticated.messageThread;
+package acme.features.authenticated.userThread;
 
 import javax.annotation.PostConstruct;
 
@@ -8,25 +8,28 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import acme.components.CustomCommand;
-import acme.entities.messageThread.MessageThread;
+import acme.entities.userThread.UserThread;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
 import acme.framework.entities.Authenticated;
 
 @Controller
-@RequestMapping("/authenticated/message-thread")
-public class AuthenticatedMessageThreadController extends AbstractController<Authenticated, MessageThread> {
+@RequestMapping("/authenticated/user-thread")
+public class AuthenticatedUserThreadController extends AbstractController<Authenticated, UserThread> {
 
 	//Internal state -------------------------------------------
 
 	@Autowired
-	private AuthenticatedMessageThreadListMineService	listMineService;
+	private AuthenticatedUserThreadListMineService	listMineService;
 
 	@Autowired
-	private AuthenticatedMessageThreadShowService		showService;
+	private AuthenticatedUserThreadShowService		showService;
 
 	@Autowired
-	private AuthenticatedMessageThreadCreateService		createService;
+	private AuthenticatedUserThreadCreateService	createService;
+
+	@Autowired
+	private AuthenticatedUserThreadDeleteService	deleteService;
 
 
 	//Constructors ---------------------------------------------
@@ -36,6 +39,7 @@ public class AuthenticatedMessageThreadController extends AbstractController<Aut
 		super.addCustomCommand(CustomCommand.LIST_MINE, BasicCommand.LIST, this.listMineService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
 		super.addBasicCommand(BasicCommand.CREATE, this.createService);
+		super.addBasicCommand(BasicCommand.DELETE, this.deleteService);
 	}
 
 }

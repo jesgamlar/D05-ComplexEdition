@@ -29,3 +29,7 @@ www=id del worker representado con sus 3 últimos dígitos. Un trabajador solo p
 TASK 011: Se ha interpretado que se pide que el gráfico muestre el número de nuevas solicitudes que se han creado en cada día 
 y que estas estén organizadas según su estado.
 
+TASK 006: Un usuario autenticado podrá administrar los usuarios de sus cadenas de mensaje en la vista correspondiente al show
+de esa cadena de mensajes. Tendrá un botón para listar los participantes de esa cadena y podrá añadir nuevos y borrar los ya existentes
+(el botón para borrar se encuentra en el show de cada participante).
+

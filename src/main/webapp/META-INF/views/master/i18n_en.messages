@@ -41,6 +41,8 @@ master.menu.authenticated.listRequests = Requests
 master.menu.authenticated.listMessageThreads = Message Threads 
 master.menu.authenticated.listJobs = Jobs
 
+master.menu.authenticated.message-thread.create = Create Message Thread
+
 
 
 # master.menu.anonymous #######################################################

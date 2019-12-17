@@ -16,22 +16,24 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:form-textbox code="authenticated.messageThread.form.label.title" path="title"/>
 	<jstl:if test="${command != 'create' }">
-		<acme:form-moment code="authenticated.messageThread.form.label.moment" path="moment" readonly="true"/>
-		<acme:form-textbox code="authenticated.messageThread.form.label.starterUsername" path="starterUsername" readonly="true"/>
+		<acme:form-textbox code="authenticated.userThread.form.label.username" path="userUsername" readonly="true"/>
+		<acme:form-textbox code="authenticated.userThread.form.label.messageThread" path="messageThreadTitle" readonly="true"/>
+	</jstl:if>
+	
+	<jstl:if test="${command == 'create' }">
+		<acme:form-textbox code="authenticated.userThread.form.label.userId" path="userId" />
+		
 	</jstl:if>
 	
 
 	<acme:form-submit test="${command == 'create'}"
-		code = "authenticated.messageThread.form.button.create"
-		action="/authenticated/message-thread/create"/>
-	<acme:form-submit test="${command == 'show'}"
-		code='authenticated.messageThread.form.button.listMessages'
-		method='get' action='/authenticated/message/list-mine?id=${id}' />
-	<acme:form-submit test="${command == 'show'}"
-		code='authenticated.messageThread.form.button.listUsers'
-		method='get' action='/authenticated/user-thread/list-mine?id=${id}' />
+		code = "authenticated.userThread.form.button.create"
+		action="/authenticated/user-thread/create"/>
+		
+	<acme:form-submit test="${command != 'create'}"
+		code = "authenticated.userThread.form.button.delete"
+		action="/authenticated/user-thread/delete"/>
 		
 	<acme:form-return code="authenticated.messageThread.form.button.return"/>
 	

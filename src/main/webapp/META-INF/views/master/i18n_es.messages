@@ -41,6 +41,7 @@ master.menu.authenticated.listRequests = Peticiones
 master.menu.authenticated.listMessageThreads = Cadenas de mensajes
 master.menu.authenticated.listJobs = Trabajos
 
+master.menu.authenticated.message-thread.create = Crear cadena de mensajes
 
 
 # master.menu.anonymous #######################################################

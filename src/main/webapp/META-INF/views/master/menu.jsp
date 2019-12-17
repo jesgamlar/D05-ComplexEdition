@@ -53,6 +53,7 @@
 			<acme:menu-suboption code="master.menu.authenticated.listInvestorRecord" action="/authenticated/investor-record/list"/>
 			<acme:menu-suboption code="master.menu.authenticated.listOffers" action="/authenticated/offer/list"/>
 			<acme:menu-suboption code="master.menu.authenticated.listRequests" action="/authenticated/request-entity/list"/>
+			<acme:menu-suboption code="master.menu.authenticated.message-thread.create" action="/authenticated/message-thread/create"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
