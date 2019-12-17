@@ -1,5 +1,8 @@
 
-package acme.features.auditor.auditRecords;
+package acme.features.authenticated.auditRecords;
+
+import java.util.Collection;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -7,26 +10,21 @@ import org.springframework.stereotype.Service;
 import acme.entities.auditRecords.AuditRecords;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Auditor;
-import acme.framework.services.AbstractShowService;
+import acme.framework.entities.Authenticated;
+import acme.framework.services.AbstractListService;
 
 @Service
-public class AuditRecordShowService implements AbstractShowService<Auditor, AuditRecords> {
-
-	//Internal state --------------------------------------------------
+public class AuditRecordListMineService implements AbstractListService<Authenticated, AuditRecords> {
 
 	@Autowired
-	private AuditRecordRepository repository;
+	AuditRecordRepository repository;
 
-
-	//AbstractShowService<Administrator, Announcement> interface ------
 
 	@Override
 	public boolean authorise(final Request<AuditRecords> request) {
 		assert request != null;
 
 		return true;
-
 	}
 
 	@Override
@@ -39,17 +37,16 @@ public class AuditRecordShowService implements AbstractShowService<Auditor, Audi
 	}
 
 	@Override
-	public AuditRecords findOne(final Request<AuditRecords> request) {
+	public Collection<AuditRecords> findMany(final Request<AuditRecords> request) {
 		assert request != null;
 
-		AuditRecords result;
-		int id;
+		Collection<AuditRecords> result;
 
-		id = request.getModel().getInteger("id");
-		result = this.repository.findOneJobById(id);
+		int id = request.getModel().getInteger("id");
+		result = this.repository.findManyMine(id);
+		result = result.stream().filter(x -> x.getMoreInfo() && x.getAuditor().getUserAccount().getId() != request.getPrincipal().getAccountId()).collect(Collectors.toList());
 
 		return result;
-
 	}
 
 }

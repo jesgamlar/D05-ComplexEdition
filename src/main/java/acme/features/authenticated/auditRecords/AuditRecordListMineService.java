@@ -1,5 +1,5 @@
 
-package acme.features.authenticated.auditRecords;
+package acme.features.auditor.auditRecords;
 
 import java.util.Collection;
 import java.util.stream.Collectors;
@@ -10,11 +10,11 @@ import org.springframework.stereotype.Service;
 import acme.entities.auditRecords.AuditRecords;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Authenticated;
+import acme.framework.entities.Auditor;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AuditRecordListMineService implements AbstractListService<Authenticated, AuditRecords> {
+public class AuditRecordListMineService implements AbstractListService<Auditor, AuditRecords> {
 
 	@Autowired
 	AuditRecordRepository repository;
