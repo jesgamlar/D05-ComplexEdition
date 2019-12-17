@@ -23,7 +23,7 @@
 	<acme:form-textarea readonly="true" code="employer.application.form.label.qualifications" path="qualifications"/>
 	<acme:form-checkbox code="employer.application.form.label.accept" path="accept"/>
 	<acme:form-checkbox code="employer.application.form.label.reject" path="reject"/>
-	<acme:form-textarea code="employer.application.form.label.justification" path="rejectJustification"/>
+	<acme:form-textarea code="employer.application.form.label.justification" path="justification"/>
 	
 	<acme:form-submit test="${command == 'listMine'}" 
 		code="employer.application.form.button.listMine" 

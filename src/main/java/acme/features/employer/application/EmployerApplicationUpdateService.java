@@ -53,7 +53,7 @@ public class EmployerApplicationUpdateService implements AbstractUpdateService<E
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "referenceNumber", "moment", "statement", "skills", "qualifications", "status", "rejectJustification");
+		request.unbind(entity, model, "referenceNumber", "moment", "statement", "skills", "qualifications", "status", "justification");
 	}
 
 	@Override
@@ -80,7 +80,7 @@ public class EmployerApplicationUpdateService implements AbstractUpdateService<E
 		}
 
 		if (!errors.hasErrors("reject")) {
-			errors.state(request, request.getModel().getAttribute("reject").equals("true") && !entity.getRejectJustification().isEmpty(), "rejectJustification", "employer.application.form.error.reject");
+			errors.state(request, request.getModel().getAttribute("reject").equals("true") && !entity.getJustification().isEmpty(), "justification", "employer.application.form.error.reject");
 		}
 
 	}
