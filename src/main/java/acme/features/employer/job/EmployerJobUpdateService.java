@@ -1,7 +1,9 @@
 
 package acme.features.employer.job;
 
+import java.util.Calendar;
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,7 @@ import acme.entities.roles.Employer;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractUpdateService;
 
 @Service
@@ -29,7 +32,15 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 	public boolean authorise(final Request<Job> request) {
 		assert request != null;
 
-		return true;
+		Principal p = request.getPrincipal();
+		int id = p.getActiveRoleId();
+		Collection<Job> jobsEmployer = this.repository.findManyJobByEmployerId(id);
+		int idJob = request.getModel().getInteger("id");
+		Job job = this.repository.findOneJobById(idJob);
+		boolean isPublished = this.repository.findOneJobStatusById(idJob);
+		boolean res = !isPublished && jobsEmployer.contains(job);
+
+		return res;
 	}
 
 	@Override
@@ -69,14 +80,31 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 		assert entity != null;
 		assert errors != null;
 
+		if (!errors.hasErrors("reference")) {
+			int id = request.getModel().getInteger("id");
+			String oldReference = this.repository.findOneJobReferenceById(id);
+			if (!oldReference.equals(request.getModel().getString("reference"))) {
+				List<String> referenceCodes = this.repository.findReferences();
+				errors.state(request, !referenceCodes.contains(entity.getReference()), "reference", "employer.job.form.error.reference");
+			}
+		}
+
+		if (!errors.hasErrors("deadline")) {
+			Date currentDate = new Date(System.currentTimeMillis());
+			Calendar calendar = Calendar.getInstance();
+			calendar.setTime(currentDate);
+			calendar.add(Calendar.DAY_OF_YEAR, 7);
+			errors.state(request, entity.getDeadline().after(calendar.getTime()), "deadline", "employer.job.form.error.deadline");
+		}
+
 		if (entity.getStatus() == "Published") {
 			if (!errors.hasErrors("description")) {
-				int threshold = this.repository.findThreshold();
+				double threshold = this.repository.findThreshold();
 				String[] spanishWords = this.repository.findSpanishWords().split(", ");
 				String[] englishWords = this.repository.findEnglishWords().split(", ");
-				int numberWordsDescription = entity.getDescription().split("\\s|\\.").length;
+				double numberWordsDescription = entity.getDescription().split("\\s|\\.|\\,").length;
 
-				int spamWords = 0;
+				double spamWords = 0.;
 				for (String s : spanishWords) {
 					if (entity.getDescription().contains(s)) {
 						spamWords++;
@@ -92,22 +120,21 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 
 			}
 
-			if (!errors.hasErrors()) {
-				int id = request.getModel().getInteger("id");
-				List<Double> ls = this.repository.findTimexWeekThisJob(id);
+			int id = request.getModel().getInteger("id");
+
+			if (!errors.hasErrors("reference")) {
+				Collection<Duty> listDuties = this.repository.findManyDutiesByJobId(id);
+				errors.state(request, !listDuties.isEmpty(), "reference", "employer.job.form.error.noDuties");
+			}
+
+			if (!errors.hasErrors("reference")) {
+				List<Double> listTime = this.repository.findTimexWeekThisJob(id);
 				Double count = 0.;
-				for (Double c : ls) {
+				for (Double c : listTime) {
 					count += c;
 				}
 				errors.state(request, count == 100, "reference", "employer.job.form.error.no100");
 			}
-
-			if (!errors.hasErrors()) {
-				int id = request.getModel().getInteger("id");
-				Collection<Duty> ls = this.repository.findManyDutiesByJobId(id);
-				errors.state(request, !ls.isEmpty(), "reference", "employer.job.form.error.noDuties");
-			}
-
 		}
 	}
 

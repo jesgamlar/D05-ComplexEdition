@@ -36,7 +36,7 @@ public class AuthenticatedMessageThreadListMineService implements AbstractListSe
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "starterUsername", "title");
+		request.unbind(entity, model, "moment", "title");
 
 	}
 

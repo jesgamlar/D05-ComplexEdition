@@ -41,8 +41,8 @@ public class AuthenticatedConsumerCreateService implements AbstractCreateService
 	@Override
 	public boolean authorise(final Request<Consumer> request) {
 		assert request != null;
-
-		return true;
+		Consumer c = new Consumer();
+		return !request.getPrincipal().hasRole(c.getClass());
 	}
 
 	@Override

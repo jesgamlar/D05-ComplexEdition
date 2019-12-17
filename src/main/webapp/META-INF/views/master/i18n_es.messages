@@ -41,6 +41,7 @@ master.menu.authenticated.listRequests = Peticiones
 master.menu.authenticated.listMessageThreads = Cadenas de mensajes
 master.menu.authenticated.listJobs = Trabajos
 
+master.menu.authenticated.message-thread.create = Crear cadena de mensajes
 
 
 # master.menu.anonymous #######################################################
@@ -77,6 +78,7 @@ master.menu.administrator.listRequestAuditor = Peticiones de Auditor
 
 master.menu.administrator.listDataEmployerWorker = Listar Datos de empleadores y trabajadores
 master.menu.administrator.jobsApplicationsChart = Gráfico de Trabajos y Solicitudes
+master.menu.administrator.applicationsPerDayChart = Gráfico de Solicitudes en los últimos 28 días
 
 master.menu.administrator.commercial-banner.create = Crear Banner Comercial
 master.menu.administrator.non-commercial-banner.create = Crear Banner No Comercial
@@ -95,7 +97,7 @@ master.menu.worker.application.list = Solicitudes
 
 master.menu.employer = Empleador
 
-master.menu.employer.application.list = Solicitudes
+master.menu.employer.application.list = Solicitudes A Mis Trabajos
 master.menu.employer.job.list = Mis Trabajos
 
 

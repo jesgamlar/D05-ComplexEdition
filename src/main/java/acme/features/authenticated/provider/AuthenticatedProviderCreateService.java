@@ -41,8 +41,8 @@ public class AuthenticatedProviderCreateService implements AbstractCreateService
 	@Override
 	public boolean authorise(final Request<Provider> request) {
 		assert request != null;
-
-		return true;
+		Provider p = new Provider();
+		return !request.getPrincipal().hasRole(p.getClass());
 	}
 
 	@Override

@@ -48,6 +48,7 @@
 					}
 				]
 		};
+		
 		var options = {
 				scales : {
 					yAxes : [
@@ -62,7 +63,8 @@
 				legend : {
 					display : true
 				}
-		};
+		};		
+		
 	
 		var canvas, context;
 	

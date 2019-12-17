@@ -1,5 +1,4 @@
 
-
 package acme.entities.roles;
 
 import javax.persistence.Entity;
@@ -21,10 +20,10 @@ public class Worker extends UserRole {
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
-	private String				company;
+	private String				skillsRecord;
 
 	@NotBlank
-	private String				sector;
+	private String				qualificationsRecord;
 
 	// Derived attributes -----------------------------------------------------
 
