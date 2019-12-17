@@ -29,7 +29,7 @@
 
 	<acme:form-submit test="${command == 'create'}"
 		code = "authenticated.userThread.form.button.create"
-		action="/authenticated/user-thread/create"/>
+		action="/authenticated/user-thread/create?${pageContext.request.queryString}"/>
 		
 	<acme:form-submit test="${command != 'create'}"
 		code = "authenticated.userThread.form.button.delete"

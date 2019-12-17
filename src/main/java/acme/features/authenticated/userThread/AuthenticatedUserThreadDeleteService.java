@@ -1,14 +1,9 @@
 
 package acme.features.authenticated.userThread;
 
-import java.util.Collection;
-
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.messageThread.MessageThread;
 import acme.entities.userThread.UserThread;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
@@ -76,14 +71,6 @@ public class AuthenticatedUserThreadDeleteService implements AbstractDeleteServi
 		assert request != null;
 		assert entity != null;
 
-		MessageThread messageThread = entity.getMessageThread();
-
-		Collection<@Valid UserThread> listUsers = messageThread.getUsers();
-		listUsers.remove(entity);
-
-		messageThread.setUsers(listUsers);
-
-		this.repository.save(messageThread);
 		this.repository.delete(entity);
 	}
 

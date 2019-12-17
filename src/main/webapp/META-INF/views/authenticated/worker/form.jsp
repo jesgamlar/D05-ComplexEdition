@@ -16,8 +16,8 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:form-textbox code="authenticated.worker.form.label.company" path="company"/>
-	<acme:form-textbox code="authenticated.worker.form.label.sector" path="sector"/>
+	<acme:form-textbox code="authenticated.worker.form.label.skills" path="skillsRecord"/>
+	<acme:form-textbox code="authenticated.worker.form.label.qualifications" path="qualificationsRecord"/>
 	
 	<acme:form-submit test="${command == 'create'}" code="authenticated.worker.form.button.create" action="/authenticated/worker/create"/>
 	<acme:form-submit test="${command == 'update'}" code="authenticated.worker.form.button.update" action="/authenticated/worker/update"/>

@@ -1,10 +1,6 @@
 
 package acme.features.authenticated.userThread;
 
-import java.util.Collection;
-
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -53,8 +49,7 @@ public class AuthenticatedUserThreadCreateService implements AbstractCreateServi
 		UserThread result;
 		result = new UserThread();
 
-		String messageThreadId = request.getServletRequest().getQueryString().split("mtid=")[1];
-		int intMessageThreadId = Integer.parseInt(messageThreadId);
+		int intMessageThreadId = request.getModel().getInteger("id");
 		MessageThread mt = this.repository.findMessageThreadById(intMessageThreadId);
 		result.setMessageThread(mt);
 
@@ -81,15 +76,9 @@ public class AuthenticatedUserThreadCreateService implements AbstractCreateServi
 		entity.setMessageThread(messageThread);
 		entity.setUser(user);
 
-		Collection<@Valid UserThread> listUsers = messageThread.getUsers();
-		listUsers.add(entity);
-		messageThread.setUsers(listUsers);
-
 		//-----------------------------------------------------------------
 
 		this.repository.save(entity);
-
-		this.repository.save(messageThread);
 
 	}
 
