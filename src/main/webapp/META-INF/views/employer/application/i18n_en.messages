@@ -20,6 +20,7 @@ employer.application.form.label.justification = Justification
 employer.application.form.error.acceptAndReject = Both "Accept" and "Reject" can't be selected
 employer.application.form.error.reject = You must justify the rejection of the application 
 employer.application.form.button.update = Update
+employer.application.form.label.acceptReject = Accept or reject application
 
 employer.application.list.label.referenceNumber = Reference number
 employer.application.list.label.statement = Statement

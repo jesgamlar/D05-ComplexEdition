@@ -47,7 +47,6 @@ public class Job extends DomainEntity {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date							deadline;
 
-	@NotBlank
 	private String							description;
 
 	@NotNull

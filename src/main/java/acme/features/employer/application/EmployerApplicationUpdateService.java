@@ -75,13 +75,10 @@ public class EmployerApplicationUpdateService implements AbstractUpdateService<E
 		assert entity != null;
 		assert errors != null;
 
-		if (!errors.hasErrors("accept")) {
-			errors.state(request, !(request.getModel().getAttribute("accept").equals("true") && request.getModel().getAttribute("reject").equals("true")), "accept", "employer.application.form.error.acceptAndReject");
-		}
-
-		if (!errors.hasErrors("reject")) {
-			errors.state(request, request.getModel().getAttribute("reject").equals("true") && !entity.getJustification().isEmpty() || request.getModel().getAttribute("accept").equals("true"), "justification", "employer.application.form.error.reject");
-
+		if (request.getModel().getAttribute("acceptReject").equals("reject")) {
+			if (!errors.hasErrors("justification")) {
+				errors.state(request, !entity.getJustification().isEmpty(), "justification", "employer.application.form.error.reject");
+			}
 		}
 
 	}
@@ -91,9 +88,9 @@ public class EmployerApplicationUpdateService implements AbstractUpdateService<E
 		assert request != null;
 		assert entity != null;
 
-		if (request.getModel().getAttribute("accept").equals("true")) {
+		if (request.getModel().getAttribute("acceptReject").equals("accept")) {
 			entity.setStatus(ApplicationStatus.ACCEPTED);
-		} else if (request.getModel().getAttribute("reject").equals("true")) {
+		} else if (request.getModel().getAttribute("acceptReject").equals("reject")) {
 			entity.setStatus(ApplicationStatus.REJECTED);
 		}
 

@@ -26,9 +26,10 @@ public class EmployerDutyUpdateService implements AbstractUpdateService<Employer
 	public boolean authorise(final Request<Duty> request) {
 		assert request != null;
 
-		//		boolean res = !request.getModel().getBoolean("finalMode") && jobsEmployer.contains(job);
+		int idJob = this.repository.findOneJobByDutyId(request.getModel().getInteger("id"));
+		Job j = this.repository.findOneJobById(idJob);
 
-		return true;
+		return !j.isFinalMode();
 	}
 
 	@Override

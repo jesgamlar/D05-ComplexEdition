@@ -19,6 +19,7 @@ employer.application.form.label.justification = Justificación
 employer.application.form.error.acceptAndReject = "Aceptar" y "Rechazar" no pueden ser seleccionadas simultáneamente
 employer.application.form.error.reject = Debes justificar el rechazo de la solicitud
 employer.application.form.button.update = Actualizar
+employer.application.form.label.acceptReject = Aceptar o rechazar solicitud
 
 employer.application.list.label.referenceNumber = Número de referencia
 employer.application.list.label.statement = Declaración

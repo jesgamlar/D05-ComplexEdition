@@ -1,7 +1,6 @@
 
 package acme.features.employer.job;
 
-import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
@@ -91,22 +90,25 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 
 		if (!errors.hasErrors("deadline")) {
 			Date currentDate = new Date(System.currentTimeMillis());
-			Calendar calendar = Calendar.getInstance();
-			calendar.setTime(currentDate);
-			calendar.add(Calendar.DAY_OF_YEAR, 7);
-			errors.state(request, entity.getDeadline().after(calendar.getTime()), "deadline", "employer.job.form.error.deadline");
+			errors.state(request, entity.getDeadline().after(currentDate), "deadline", "employer.job.form.error.deadline");
 		}
 
 		if (entity.getStatus() == "Published") {
 			if (!errors.hasErrors("description")) {
+				errors.state(request, !entity.getDescription().isEmpty(), "description", "employer.job.form.error.emptyDescription");
+
 				double threshold = this.repository.findThreshold();
 				String[] spanishWords = this.repository.findSpanishWords().split(", ");
 				String[] englishWords = this.repository.findEnglishWords().split(", ");
 				double numberWordsDescription = entity.getDescription().split("\\s|\\.|\\,").length;
+				double numberWordsTitle = entity.getTitle().split("\\s|\\.|\\,").length;
 
 				double spamWords = 0.;
 				for (String s : spanishWords) {
 					if (entity.getDescription().contains(s)) {
+						spamWords++;
+					}
+					if (entity.getTitle().contains(s)) {
 						spamWords++;
 					}
 				}
@@ -114,9 +116,12 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 					if (entity.getDescription().contains(s)) {
 						spamWords++;
 					}
+					if (entity.getTitle().contains(s)) {
+						spamWords++;
+					}
 				}
 
-				errors.state(request, spamWords / numberWordsDescription * 100 <= threshold, "description", "employer.job.form.error.spamDescription");
+				errors.state(request, spamWords / (numberWordsDescription + numberWordsTitle) * 100 <= threshold, "description", "employer.job.form.error.spamDescription");
 
 			}
 

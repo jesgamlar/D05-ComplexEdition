@@ -37,9 +37,10 @@ public class EmployerDutyShowService implements AbstractShowService<Employer, Du
 		int idDuty = request.getModel().getInteger("id");
 		int id = this.repository.findOneJobIdByDutyId(idDuty);
 		boolean published = this.repository.findOneJobStatus(id);
-		request.getModel().setAttribute("published", published);
 
 		request.unbind(entity, model, "title", "description", "timexWeek");
+
+		model.setAttribute("published", published);
 	}
 
 	@Override
