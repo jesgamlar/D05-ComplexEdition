@@ -63,7 +63,7 @@ public class SponsorBannerUpdateService implements AbstractUpdateService<Sponsor
 		principal = request.getPrincipal();
 		userAccountId = principal.getAccountId();
 
-		result = this.repository.findOneCommercialBannerByUserAccountId(userAccountId);
+		result = this.repository.findOneCommercialBannerById(userAccountId);
 
 		return result;
 	}

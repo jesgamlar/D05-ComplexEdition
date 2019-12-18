@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.duty.Duty;
+import acme.entities.jobs.Job;
 import acme.entities.roles.Employer;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
@@ -25,7 +26,10 @@ public class EmployerDutyDeleteService implements AbstractDeleteService<Employer
 	public boolean authorise(final Request<Duty> request) {
 		assert request != null;
 
-		return true;
+		int idJob = this.repository.findOneJobByDutyId(request.getModel().getInteger("id"));
+		Job j = this.repository.findOneJobById(idJob);
+
+		return !j.isFinalMode();
 	}
 
 	@Override
