@@ -12,15 +12,11 @@ authenticated.sponsor.form.title.create = Become a sponsor
 authenticated.sponsor.form.title.update = Update your sponsor data
 
 authenticated.sponsor.form.label.organisationName = Organisation Name
-authenticated.sponsor.form.label.creditCard = Credit Card:
-authenticated.sponsor.form.label.creditCard.holder = Holder
-authenticated.sponsor.form.label.creditCard.brand = Brand
-authenticated.sponsor.form.label.creditCard.deadline = Deadline
-authenticated.sponsor.form.label.creditCard.number = Number
-authenticated.sponsor.form.label.creditCard.cvv = CVV
 
 authenticated.sponsor.form.button.create = Register
 authenticated.sponsor.form.button.update = Update
+authenticated.sponsor.form.button.creditCard.update = Credit card
+authenticated.sponsor.form.button.creditCard.create = Credit card
 authenticated.sponsor.form.button.return = Return
 
 authenticated.sponsor.form.error.deadlineIncorrect = This must be a non-blank date

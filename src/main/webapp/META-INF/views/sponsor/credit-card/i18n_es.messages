@@ -1,0 +1,25 @@
+# i18n_es.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+sponsor.creditCard.form.label.creditCard.holder = Titular
+sponsor.creditCard.form.label.creditCard.brand = Marca
+sponsor.creditCard.form.label.creditCard.deadline = Caducidad
+sponsor.creditCard.form.label.creditCard.number = Número
+sponsor.creditCard.form.label.creditCard.cvv = CVV
+
+sponsor.creditCard.form.button.create = Crear
+sponsor.creditCard.form.button.update = Actualizar
+sponsor.creditCard.form.button.return = Volver
+
+sponsor.creditCard.form.error.deadlineIncorrect = Esto debe ser una fecha no vacía
+sponsor.creditCard.form.error.deadline = La fecha de caducidad debe estar en el futuro
+sponsor.creditCard.form.error.deadlinePattern = La fecha de caducidad no está en el formato MM/YY
+sponsor.creditCard.form.error.numberPattern = El número de tarjeta no está en el formato 5[1-5][0-9]{14}$
+sponsor.creditCard.form.error.cvvPattern = El CVV no está en el formato ^\\d{3,4}$

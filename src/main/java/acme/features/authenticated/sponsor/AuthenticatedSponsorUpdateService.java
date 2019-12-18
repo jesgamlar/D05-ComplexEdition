@@ -12,15 +12,9 @@
 
 package acme.features.authenticated.sponsor;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.creditCard.CreditCard;
 import acme.entities.roles.Sponsor;
 import acme.framework.components.Errors;
 import acme.framework.components.HttpMethod;
@@ -55,44 +49,6 @@ public class AuthenticatedSponsorUpdateService implements AbstractUpdateService<
 		assert entity != null;
 		assert errors != null;
 
-		if (!errors.hasErrors("creditCard.deadline")) {
-			errors.state(request, request.getModel().getString("creditCard.deadline") != null, "creditcard.deadline", "authenticated.sponsor.form.error.deadlineIncorrect");
-		}
-
-		if (!errors.hasErrors("creditCard.deadline")) {
-			errors.state(request, request.getModel().getString("creditCard.deadline").matches("^(0[1-9]|1[0-2])\\/[0-9][0-9]$"), "creditCard.deadline", "authenticated.sponsor.form.error.deadlinePattern");
-		}
-
-		if (!errors.hasErrors("creditCard.deadline")) {
-			Date currentDate = new Date(System.currentTimeMillis());
-
-			String[] monthYear = request.getModel().getString("creditCard.deadline").split("/");
-			String deadlineString = monthYear[0] + "/20" + monthYear[1];
-			Date deadline = new Date();
-
-			try {
-				deadline = new SimpleDateFormat("MM/yyyy").parse(deadlineString);
-			} catch (ParseException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
-			Calendar calendar = Calendar.getInstance();
-			calendar.setTime(deadline);
-
-			calendar.add(Calendar.HOUR, 1);
-
-			deadline = calendar.getTime();
-
-			errors.state(request, deadline.after(currentDate), "creditcard.deadline", "authenticated.sponsor.form.error.deadline");
-
-		}
-		if (!errors.hasErrors("creditCard.number")) {
-			errors.state(request, request.getModel().getString("creditCard.number").matches("5[1-5][0-9]{14}$"), "creditCard.number", "authenticated.sponsor.form.error.numberPattern");
-		}
-		if (!errors.hasErrors("creditCard.cvv")) {
-			errors.state(request, request.getModel().getString("creditCard.cvv").matches("^\\d{3,4}$"), "creditCard.cvv", "authenticated.sponsor.form.error.cvvPattern");
-		}
 	}
 
 	@Override
@@ -101,7 +57,7 @@ public class AuthenticatedSponsorUpdateService implements AbstractUpdateService<
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors);
+		request.bind(entity, errors, "hasCreditCard");
 	}
 
 	@Override
@@ -109,8 +65,11 @@ public class AuthenticatedSponsorUpdateService implements AbstractUpdateService<
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+		Boolean b = entity.getCreditCard() != null;
 
-		request.unbind(entity, model, "organisationName", "creditCard.holder", "creditCard.brand", "creditCard.deadline", "creditCard.number", "creditCard.cvv");
+		model.setAttribute("hasCreditCard", b);
+
+		request.unbind(entity, model, "organisationName");
 	}
 
 	@Override
@@ -134,9 +93,6 @@ public class AuthenticatedSponsorUpdateService implements AbstractUpdateService<
 		assert request != null;
 		assert entity != null;
 
-		CreditCard c = new CreditCard();
-		c = entity.getCreditCard();
-		this.repository.save(c);
 		this.repository.save(entity);
 
 	}
