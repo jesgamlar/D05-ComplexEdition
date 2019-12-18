@@ -53,9 +53,11 @@
 			<acme:menu-suboption code="master.menu.authenticated.listInvestorRecord" action="/authenticated/investor-record/list"/>
 			<acme:menu-suboption code="master.menu.authenticated.listOffers" action="/authenticated/offer/list"/>
 			<acme:menu-suboption code="master.menu.authenticated.listRequests" action="/authenticated/request-entity/list"/>
+			<acme:menu-suboption code="master.menu.authenticated.message-thread.create" action="/authenticated/message-thread/create"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
+			<acme:menu-suboption code="master.menu.administrator.listRequestAuditor" action="/administrator/request-auditor/list"/>
 			<acme:menu-suboption code="master.menu.administrator.commercial-banner" action="/administrator/commercial-banner/list"/>
 			<acme:menu-suboption code="master.menu.administrator.commercial-banner.create" action="/administrator/commercial-banner/create"/>
 			<acme:menu-suboption code="master.menu.administrator.non-commercial-banner" action="/administrator/non-commercial-banner/list"/>
@@ -72,6 +74,7 @@
 			<acme:menu-suboption code="master.menu.administrator.listChallenge.create" action="/administrator/challenge/create"/>
      		<acme:menu-suboption code="master.menu.administrator.companyRecordsChart" action="/administrator/companies-investors-chart/chart"/>
       		<acme:menu-suboption code="master.menu.administrator.jobsApplicationsChart" action="/administrator/jobs-application-chart/chart"/>
+      		<acme:menu-suboption code="master.menu.administrator.applicationsPerDayChart" action="/administrator/applications-per-day-chart/chart"/>
       		<acme:menu-suboption code="master.menu.administrator.listData" action="/administrator/list-data/list-mine"/>
       		<acme:menu-suboption code="master.menu.administrator.listDataEmployerWorker" action="/administrator/list-data-employer-worker/list-mine"/>
       
@@ -89,7 +92,7 @@
 		
 		<acme:menu-option code="master.menu.employer" access="hasRole('Employer')">
 			<acme:menu-suboption code="master.menu.employer.job.list" action="/employer/job/list-mine"/>
-			<acme:menu-suboption code="master.menu.employer.application.list" action="/employer/application/list"/>
+			<acme:menu-suboption code="master.menu.employer.application.list" action="/employer/application/list-mine"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">
@@ -120,7 +123,7 @@
 			
 			<acme:menu-suboption code="master.menu.user-account.become-provider" action="/authenticated/provider/create" access="!hasRole('Provider')"/>
 			<acme:menu-suboption code="master.menu.user-account.become-consumer" action="/authenticated/consumer/create" access="!hasRole('Consumer')"/>
-			<acme:menu-suboption code="master.menu.user-account.become-auditor" action="/authenticated/auditor/create" access="!hasRole('Auditor')"/>
+			<acme:menu-suboption code="master.menu.user-account.become-auditor" action="/authenticated/request-auditor/create" access="!hasRole('Auditor')"/>
 			<acme:menu-suboption code="master.menu.user-account.become-employer" action="/authenticated/employer/create" access="!hasRole('Employer')"/>
 			<acme:menu-suboption code="master.menu.user-account.become-worker" action="/authenticated/worker/create" access="!hasRole('Worker')"/>
 		</acme:menu-option>

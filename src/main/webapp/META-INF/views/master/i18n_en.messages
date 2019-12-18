@@ -41,6 +41,8 @@ master.menu.authenticated.listRequests = Requests
 master.menu.authenticated.listMessageThreads = Message Threads 
 master.menu.authenticated.listJobs = Jobs
 
+master.menu.authenticated.message-thread.create = Create Message Thread
+
 
 
 # master.menu.anonymous #######################################################
@@ -80,6 +82,8 @@ master.menu.administrator.listAnnouncement.create = Create Announcement
 master.menu.administrator.investorRecord.create = Create Investor Record
 master.menu.administrator.companyRecords.create = Create Company Record
 master.menu.administrator.listChallenge.create = Create Challenge
+master.menu.administrator.listRequestAuditor = Requests Auditor
+master.menu.administrator.applicationsPerDayChart = Chart of Applications in the last 28 days
 
 
 # master.menu.worker ########################################################
@@ -91,7 +95,7 @@ master.menu.worker.application.list = Applications
 
 master.menu.employer = Empleador
 
-master.menu.employer.application.list = Applications
+master.menu.employer.application.list = Applications To My Jobs
 master.menu.employer.job.list = My Jobs
 
 # master.menu.sponsor ########################################################

@@ -11,8 +11,8 @@
 authenticated.worker.form.title.create = Hazte trabajador
 authenticated.worker.form.title.update = Actualiza tus datos de trabajador
 
-authenticated.worker.form.label.company = Compañía
-authenticated.worker.form.label.sector = Sector
+authenticated.worker.form.label.skills = Habilidades
+authenticated.worker.form.label.qualifications = Cualidades
 
 authenticated.worker.form.button.create = Registrar
 authenticated.worker.form.button.update = Actualizar

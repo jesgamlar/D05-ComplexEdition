@@ -53,8 +53,8 @@ public class EmployerDutyCreateService implements AbstractCreateService<Employer
 
 		result = new Duty();
 
-		int id = request.getModel().getInteger("id");
-		Job j = this.repository.findOneJobById(id);
+		int idJob = request.getModel().getInteger("id");
+		Job j = this.repository.findOneJobById(idJob);
 		result.setJob(j);
 
 		return result;

@@ -18,7 +18,7 @@
 <acme:form>
 	<acme:form-textbox code="authenticated.job.form.label.reference" path="reference"/>
 
-	<acme:form-checkbox code="authenticated.job.form.label.status" path="finalMode"/>
+	<%-- <acme:form-checkbox code="authenticated.job.form.label.status" path="finalMode"/> --%>
 
 	<acme:form-textbox code="authenticated.job.form.label.title" path="title"/>
 	<acme:form-moment code="authenticated.job.form.label.deadline" path="deadline"/>
@@ -26,9 +26,6 @@
 	<acme:form-url code="authenticated.job.form.label.moreInfo" path="moreInfo"/>
 	<acme:form-textarea code="authenticated.job.form.label.description" path="description"/>
 	
-
-
-
 	
 	<acme:form-submit test="${principal.hasRole('acme.entities.roles.Worker') == true}"
 		code="worker.application.form.button.create"

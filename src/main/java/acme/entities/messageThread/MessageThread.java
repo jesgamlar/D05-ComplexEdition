@@ -12,7 +12,6 @@ import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
 import acme.entities.userThread.UserThread;
@@ -41,7 +40,7 @@ public class MessageThread extends DomainEntity {
 
 	// Relationships --------------------------------------------------------------------------------
 
-	@NotNull
+	//@NotNull
 	@Valid
 	@ManyToOne(optional = false)
 	private Authenticated					starter;

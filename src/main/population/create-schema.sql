@@ -26,6 +26,7 @@
     create table `application` (
        `id` integer not null,
         `version` integer not null,
+        `justification` varchar(255),
         `moment` datetime(6),
         `qualifications` varchar(255),
         `reference_number` varchar(255),
@@ -266,6 +267,15 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `request_auditor` (
+       `id` integer not null,
+        `version` integer not null,
+        `firm` varchar(255),
+        `responsibility_statement` varchar(255),
+        `user_id` integer not null,
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `request_entity` (
        `id` integer not null,
         `version` integer not null,
@@ -333,8 +343,8 @@
        `id` integer not null,
         `version` integer not null,
         `user_account_id` integer,
-        `company` varchar(255),
-        `sector` varchar(255),
+        `qualifications_record` varchar(255),
+        `skills_record` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -343,6 +353,7 @@
     ) engine=InnoDB;
 
     insert into `hibernate_sequence` values ( 1 );
+create index IDXnlv6ege1ixororpblu3lctiev on `application` (`reference_number`);
 
     alter table `application` 
        add constraint UK_rf84q38qr35ymh5nn0dcxfdue unique (`reference_number`);
@@ -351,6 +362,9 @@ create index IDXnr284tes3x8hnd3h716tmb3fr on `challenge` (`deadline`);
     alter table `job` 
        add constraint UK_7jmfdvs0b0jx7i33qxgv22h7b unique (`reference`);
 create index IDXq2o9psuqfuqmq59f0sq57x9uf on `offer` (`deadline`);
+
+    alter table `request_auditor` 
+       add constraint UK_orm9pwqd7l8xgucb1vr302u09 unique (`user_id`);
 create index IDX6075l7l7ajup0b22keibg4bil on `request_entity` (`deadline`);
 
     alter table `user_account` 
@@ -434,6 +448,11 @@ create index IDX6075l7l7ajup0b22keibg4bil on `request_entity` (`deadline`);
     alter table `provider` 
        add constraint FK_b1gwnjqm6ggy9yuiqm0o4rlmd 
        foreign key (`user_account_id`) 
+       references `user_account` (`id`);
+
+    alter table `request_auditor` 
+       add constraint `FKg9gmiivm111rnb6yd8eq82kbk` 
+       foreign key (`user_id`) 
        references `user_account` (`id`);
 
     alter table `sponsor` 

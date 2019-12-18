@@ -8,11 +8,10 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.auditor.form.title.create = Hazte auditor
 authenticated.auditor.form.title.update = Actualiza tus datos de auditor
 
-authenticated.auditor.form.label.firm = Empresa
-authenticated.auditor.form.label.responsibilityStatement = Declaración de Responsabilidad
+authenticated.auditor.form.label.firm = Firma
+authenticated.auditor.form.label.responsibilityStatement = Declaración de responsabilidad
 
 authenticated.auditor.form.button.create = Registrar
 authenticated.auditor.form.button.update = Actualizar

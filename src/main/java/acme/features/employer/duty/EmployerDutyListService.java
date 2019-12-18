@@ -36,6 +36,10 @@ public class EmployerDutyListService implements AbstractListService<Employer, Du
 		assert entity != null;
 		assert model != null;
 
+		int id = request.getModel().getInteger("id");
+		boolean published = this.repository.findOneJobStatus(id);
+		request.getModel().setAttribute("published", published);
+
 		request.unbind(entity, model, "title", "timexWeek");
 	}
 
@@ -45,8 +49,7 @@ public class EmployerDutyListService implements AbstractListService<Employer, Du
 
 		Collection<Duty> result;
 		int id = request.getModel().getInteger("id");
-
-		result = this.repository.findManyByJobId(id);
+		result = this.repository.findManyDutiesByJobId(id);
 
 		return result;
 	}

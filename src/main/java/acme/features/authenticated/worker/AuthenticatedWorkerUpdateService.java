@@ -66,7 +66,7 @@ public class AuthenticatedWorkerUpdateService implements AbstractUpdateService<A
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "company", "sector");
+		request.unbind(entity, model, "skillsRecord", "qualificationsRecord");
 	}
 
 	@Override

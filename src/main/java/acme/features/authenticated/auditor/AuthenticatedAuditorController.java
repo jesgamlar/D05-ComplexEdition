@@ -30,17 +30,13 @@ public class AuthenticatedAuditorController extends AbstractController<Authentic
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AuthenticatedAuditorCreateService	createService;
-
-	@Autowired
-	private AuthenticatedAuditorUpdateService	updateService;
+	private AuthenticatedAuditorUpdateService updateService;
 
 
 	// Constructors -----------------------------------------------------------
 
 	@PostConstruct
 	private void initialise() {
-		super.addBasicCommand(BasicCommand.CREATE, this.createService);
 		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
 	}
 

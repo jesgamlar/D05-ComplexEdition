@@ -18,6 +18,7 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
+import acme.entities.applications.Application;
 import acme.entities.auditRecords.AuditRecords;
 import acme.entities.duty.Duty;
 import acme.entities.roles.Employer;
@@ -64,6 +65,9 @@ public class Job extends DomainEntity {
 	@OneToMany(mappedBy = "job")
 	private Collection<@Valid AuditRecords>	auditRecords;
 
+	@OneToMany(mappedBy = "job")
+	private Collection<@Valid Application>	applications;
+
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
@@ -81,6 +85,11 @@ public class Job extends DomainEntity {
 			res = "Draft";
 		}
 		return res.toString();
+	}
+
+	@Transient
+	public boolean getEmptyApplications() {
+		return this.applications.isEmpty();
 	}
 
 }

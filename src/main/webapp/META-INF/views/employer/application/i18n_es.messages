@@ -13,9 +13,15 @@ employer.application.form.label.moment = Momento:
 employer.application.form.label.statement = Declaración:
 employer.application.form.label.skills = Habilidades:
 employer.application.form.label.qualifications = Calificaciones:
+employer.application.form.label.accept = Aceptar Solicitud
+employer.application.form.label.reject = Rechazar Solicitud
+employer.application.form.label.justification = Justificación
+employer.application.form.error.acceptAndReject = "Aceptar" y "Rechazar" no pueden ser seleccionadas simultáneamente
+employer.application.form.error.reject = Debes justificar el rechazo de la solicitud
+employer.application.form.button.update = Actualizar
 
 employer.application.list.label.referenceNumber = Número de referencia
-employer.application.list.label.title = Título
+employer.application.list.label.statement = Declaración
 employer.application.list.label.moment = Momento
 employer.application.list.label.status = Estado
 
