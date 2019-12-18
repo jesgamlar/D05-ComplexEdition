@@ -41,7 +41,7 @@ public class AuthenticatedUserThreadCreateService implements AbstractCreateServi
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model);
+		request.unbind(entity, model, "userId");
 	}
 
 	@Override
@@ -52,6 +52,9 @@ public class AuthenticatedUserThreadCreateService implements AbstractCreateServi
 		int intMessageThreadId = request.getModel().getInteger("id");
 		MessageThread mt = this.repository.findMessageThreadById(intMessageThreadId);
 		result.setMessageThread(mt);
+
+		Authenticated user = new Authenticated();
+		result.setUser(user);
 
 		return result;
 	}

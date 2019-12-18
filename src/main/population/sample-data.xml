@@ -547,7 +547,7 @@
 
 	<bean id="AuditRecord01" class="acme.entities.auditRecords.AuditRecords">
 		<property name="title" value="audit record 1" />
-		<property name="moreInfo" value="false" />
+		<property name="status" value="false" />
 		<property name="moment" value="2019/09/09 10:00" />
 		<property name="body" value="body test 1" />
 		<property name="job" ref="job01"/>
@@ -556,7 +556,7 @@
 	
 	<bean id="AuditRecord02" class="acme.entities.auditRecords.AuditRecords">
 		<property name="title" value="audit record 2" />
-		<property name="moreInfo" value="true" />
+		<property name="status" value="true" />
 		<property name="moment" value="2019/07/23 15:00" />
 		<property name="body" value="body test 2" />
 		<property name="job" ref="job01"/>
@@ -566,7 +566,7 @@
 	
 	<bean id="AuditRecord03" class="acme.entities.auditRecords.AuditRecords">
 		<property name="title" value="audit record 3" />
-		<property name="moreInfo" value="false" />
+		<property name="status" value="false" />
 		<property name="moment" value="2019/08/11 22:00" />
 		<property name="body" value="body test 3" />
 		<property name="job" ref="job02"/>

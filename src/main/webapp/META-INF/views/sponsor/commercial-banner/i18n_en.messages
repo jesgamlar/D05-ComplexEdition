@@ -9,15 +9,17 @@
 # they accept any liabilities with respect to them.
 
 
-administrator.commercial-banner.form.label.picture = Picture URL
-administrator.commercial-banner.form.label.url = Target URL
-administrator.commercial-banner.form.label.slogan = Slogan
+sponsor.commercial-banner.form.label.picture = Picture URL
+sponsor.commercial-banner.form.label.url = Target URL
+sponsor.commercial-banner.form.label.slogan = Slogan
 
-administrator.commercial-banner.list.label.picture = Picture URL
-administrator.commercial-banner.list.label.url = Target URL
+sponsor.commercial-banner.list.label.picture = Picture URL
+sponsor.commercial-banner.list.label.url = Target URL
+sponsor.commercial-banner.list.button.create = Create
 
 sponsor.commercial-banner.form.button.create = Create
 sponsor.commercial-banner.form.button.update = Update
 sponsor.commercial-banner.form.button.delete = Delete
 
-administrator.commercial-banner.form.button.return = Return
+sponsor.commercial-banner.form.button.return = Return
+sponsor.banner.form.error.spam = This slogan is considered spam

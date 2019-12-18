@@ -27,3 +27,5 @@ authenticated.job.list.label.deadline = Fecha límite
 authenticated.job.list.label.status = Estado
 
 worker.application.form.button.create = Solicitar este trabajo
+
+auditor.audit-record.form.button.create = Crear registro de audición

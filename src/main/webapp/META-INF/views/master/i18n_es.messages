@@ -107,6 +107,7 @@ master.menu.sponsor = Sponsor
 
 
 master.menu.sponsor.banner.list = Lista de banners
+master.menu.sponsor.banner.create = Crear banner
 
 
 # master.menu.provider ########################################################
@@ -140,7 +141,7 @@ master.menu.user-account.become-employer = Hazte empleador
 master.menu.user-account.worker = Datos de trabajador
 master.menu.user-account.become-worker = Hazte trabajador
 master.menu.user-account.sponsor = Datos de patrocinador
-master.menu.user-account.become-sponsor = Hazte patorciandor
+master.menu.user-account.become-sponsor = Hazte patrocinador
 
 ﻿# master.footer ###############################################################
 

@@ -19,3 +19,9 @@ authenticated.messageThread.list.label.moment = Momento
 authenticated.messageThread.list.label.title = Título
 
 authenticated.messageThread.form.button.listUsers = Listar usuarios 
+
+authenticated.userThread.form.button.create = Añadir usuario
+authenticated.userThread.form.button.delete = Eliminar usuario
+authenticated.userThread.form.label.userId = ID del usuario
+authenticated.userThread.form.label.messageThread = Título
+authenticated.userThread.form.label.username = Nombre de usuario

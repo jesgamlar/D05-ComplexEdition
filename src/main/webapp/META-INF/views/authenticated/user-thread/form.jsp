@@ -22,7 +22,7 @@
 	</jstl:if>
 	
 	<jstl:if test="${command == 'create' }">
-		<acme:form-textbox code="authenticated.userThread.form.label.userId" path="userId" />
+		<acme:form-integer code="authenticated.userThread.form.label.userId" path="userId" />
 		
 	</jstl:if>
 	

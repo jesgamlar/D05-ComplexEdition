@@ -19,3 +19,8 @@ auditor.audit-record.list.label.moreInfo = More Information
 auditor.audit-record.list.label.moment = Moment
 auditor.audit-record.list.label.body = Body
 
+auditor.auditRecord.form.button.create = Create
+auditor.auditRecord.form.button.update = Update
+
+auditor.audit-records.form.label.status = Publish
+

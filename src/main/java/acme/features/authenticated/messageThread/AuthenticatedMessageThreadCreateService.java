@@ -54,6 +54,26 @@ public class AuthenticatedMessageThreadCreateService implements AbstractCreateSe
 
 		result = new MessageThread();
 
+		Date moment;
+		Authenticated authenticated;
+
+		moment = new Date(System.currentTimeMillis() - 1);
+		result.setMoment(moment);
+
+		int id = request.getPrincipal().getAccountId();
+		authenticated = this.repository.findAuthenticatedByPrincipal(id);
+		result.setStarter(authenticated);
+
+		//-----------------------------------------------------------------
+
+		List<UserThread> users = new ArrayList<>();
+		UserThread userThreadStarter = new UserThread();
+		userThreadStarter.setMessageThread(result);
+		userThreadStarter.setUser(authenticated);
+		users.add(userThreadStarter);
+
+		result.setUsers(users);
+
 		return result;
 	}
 

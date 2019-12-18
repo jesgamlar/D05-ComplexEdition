@@ -20,3 +20,8 @@ authenticated.messageThread.list.label.title = Title
 
 authenticated.messageThread.form.button.listUsers = List users
 
+authenticated.userThread.form.button.create = Add user
+authenticated.userThread.form.button.delete = Delete
+authenticated.userThread.form.label.userId = User ID
+authenticated.userThread.form.label.messageThread = Title
+authenticated.userThread.form.label.username = Username

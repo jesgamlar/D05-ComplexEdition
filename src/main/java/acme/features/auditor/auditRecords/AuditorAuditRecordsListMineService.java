@@ -1,5 +1,5 @@
 
-package acme.features.authenticated.auditRecords;
+package acme.features.auditor.auditRecords;
 
 import java.util.Collection;
 import java.util.stream.Collectors;
@@ -8,16 +8,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.auditRecords.AuditRecords;
+import acme.entities.roles.Auditor;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Authenticated;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AuditRecordListMineService implements AbstractListService<Authenticated, AuditRecords> {
+public class AuditorAuditRecordsListMineService implements AbstractListService<Auditor, AuditRecords> {
 
 	@Autowired
-	AuditRecordRepository repository;
+	AuditorAuditRecordRepository repository;
 
 
 	@Override
@@ -33,7 +33,7 @@ public class AuditRecordListMineService implements AbstractListService<Authentic
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "moreInformation", "moment", "body");
+		request.unbind(entity, model, "title", "status", "moment", "body");
 	}
 
 	@Override
@@ -44,7 +44,7 @@ public class AuditRecordListMineService implements AbstractListService<Authentic
 
 		int id = request.getModel().getInteger("id");
 		result = this.repository.findManyMine(id);
-		result = result.stream().filter(x -> x.getStatus() && x.getAuditor().getUserAccount().getId() != request.getPrincipal().getAccountId()).collect(Collectors.toList());
+		result = result.stream().filter(x -> x.getAuditor().getUserAccount().getId() != request.getPrincipal().getAccountId()).collect(Collectors.toList());
 
 		return result;
 	}

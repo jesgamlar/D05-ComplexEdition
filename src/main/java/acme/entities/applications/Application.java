@@ -13,6 +13,7 @@ import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.Length;
@@ -36,11 +37,11 @@ public class Application extends DomainEntity {
 	private static final long	serialVersionUID	= 1L;
 
 	@Column(unique = true)
-	//@NotBlank
+	@NotBlank
 	@Length(min = 5, max = 15)
 	private String				referenceNumber;
 
-	//@NotNull
+	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
 	private Date				moment;
@@ -48,23 +49,23 @@ public class Application extends DomainEntity {
 	@NotBlank
 	private String				statement;
 
-	//@NotBlank
+	@NotBlank
 	private String				skills;
 
-	//@NotBlank
+	@NotBlank
 	private String				qualifications;
 
-	//@NotNull
+	@NotNull
 	private ApplicationStatus	status;
 
 	private String				justification;
 
-	//@NotNull
+	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
 	private Worker				worker;
 
-	//@NotNull
+	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
 	private Job					job;
