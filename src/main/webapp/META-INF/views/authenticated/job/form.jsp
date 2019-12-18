@@ -32,6 +32,11 @@
 		action="/worker/application/create?jobid=${id}"
 		method="get"/>
 		
+	<acme:form-submit test="${principal.hasRole('acme.entities.roles.Auditor') == true}"
+		code="auditor.audit-record.form.button.create"
+		action="/auditor/audit-records/create?jobid=${id}"
+		method="get"/>
+		
 	<acme:form-submit code='authenticated.job.form.button.listDuties'
 	 method='get' action='/authenticated/duty/list?id=${id}' />
 	

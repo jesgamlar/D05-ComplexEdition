@@ -104,6 +104,7 @@ master.menu.sponsor = Sponsor
 
 
 master.menu.sponsor.banner.list = List banners
+master.menu.sponsor.banner.create = Create Banner
 
 
 # master.menu.provider ########################################################

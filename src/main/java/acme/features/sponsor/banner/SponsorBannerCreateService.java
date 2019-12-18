@@ -31,7 +31,19 @@ public class SponsorBannerCreateService implements AbstractCreateService<Sponsor
 	public boolean authorise(final Request<CommercialBanner> request) {
 		assert request != null;
 
-		return true;
+		boolean result;
+
+		Principal principal;
+		int sponsorId;
+		Sponsor sponsor;
+
+		principal = request.getPrincipal();
+		sponsorId = principal.getActiveRoleId();
+		sponsor = this.repository.findOneSponsorById(sponsorId);
+
+		result = sponsor.getCreditCard() != null;
+
+		return result;
 	}
 
 	@Override
@@ -79,6 +91,29 @@ public class SponsorBannerCreateService implements AbstractCreateService<Sponsor
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+
+		if (!errors.hasErrors("slogan")) {
+			double threshold = this.repository.findThreshold();
+			String[] spanishWords = this.repository.findSpanishWords().split(", ");
+			String[] englishWords = this.repository.findEnglishWords().split(", ");
+			double numberWordsBody = entity.getSlogan().split("\\s|\\.|\\,").length;
+
+			double spamWords = 0.;
+			for (String s : spanishWords) {
+				if (entity.getSlogan().contains(s)) {
+					spamWords++;
+				}
+			}
+			for (String s : englishWords) {
+				if (entity.getSlogan().contains(s)) {
+					spamWords++;
+				}
+			}
+
+			errors.state(request, spamWords / numberWordsBody * 100 <= threshold, "slogan", "sponsor.banner.form.error.spam");
+
+		}
+
 	}
 
 	@Override

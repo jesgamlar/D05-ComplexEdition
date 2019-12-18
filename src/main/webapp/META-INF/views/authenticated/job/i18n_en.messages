@@ -31,3 +31,5 @@ authenticated.job.list.label.status = Status
 
 worker.application.form.button.create = Apply for this job
 
+auditor.audit-record.form.button.create = Create audition record
+

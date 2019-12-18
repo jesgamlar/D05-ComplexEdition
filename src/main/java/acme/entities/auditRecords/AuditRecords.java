@@ -34,7 +34,7 @@ public class AuditRecords extends DomainEntity {
 	private String				title;
 
 	@NotNull
-	private Boolean				moreInfo;
+	private Boolean				status;
 	//false -> DRAFT
 	//true -> PUBLISHED
 
@@ -59,7 +59,7 @@ public class AuditRecords extends DomainEntity {
 	@Transient
 	public String getMoreInformation() {
 		String res;
-		if (this.moreInfo == true) {
+		if (this.status == true) {
 			res = "Published";
 		} else {
 			res = "Draft";

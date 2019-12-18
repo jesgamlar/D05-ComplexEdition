@@ -26,4 +26,13 @@ public interface SponsorBannerRepository extends AbstractRepository {
 	CommercialBanner findOneCommercialBannerById(int id);
 
 
+	@Query("select s.threshold from Spam s")
+	double findThreshold();
+
+	@Query("select s.spanishWords from Spam s")
+	String findSpanishWords();
+
+	@Query("select s.englishWords from Spam s")
+	String findEnglishWords();
+
 }

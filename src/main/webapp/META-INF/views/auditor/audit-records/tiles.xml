@@ -18,12 +18,12 @@
 
 <tiles-definitions>
 
-	<definition name="authenticated/audit-records/list" extends="master">
-		<put-attribute name="body" type="template" value="../authenticated/audit-records/list.jsp" />
+	<definition name="auditor/audit-records/list" extends="master">
+		<put-attribute name="body" type="template" value="../auditor/audit-records/list.jsp" />
 	</definition>
 	
-	<definition name="authenticated/audit-records/form" extends="master">
-		<put-attribute name="body" type="template" value="../authenticated/audit-records/form.jsp"/>
+	<definition name="auditor/audit-records/form" extends="master">
+		<put-attribute name="body" type="template" value="../auditor/audit-records/form.jsp"/>
 	</definition>
 	
 </tiles-definitions>

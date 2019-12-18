@@ -49,6 +49,20 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 			}
 		}
 
+		Job job = this.repository.findJobById(jobId);
+
+		if (job.getStatus().equals("Draft")) {
+			result = false;
+		}
+
+		Date moment;
+
+		moment = new Date(System.currentTimeMillis() - 1);
+
+		if (job.getDeadline().before(moment)) {
+			result = false;
+		}
+
 		return result;
 
 	}
@@ -87,27 +101,14 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 
 		result = new Application();
 
-		return result;
-	}
-
-	@Override
-	public void validate(final Request<Application> request, final Application entity, final Errors errors) {
-		assert request != null;
-		assert entity != null;
-		assert errors != null;
-	}
-
-	@Override
-	public void create(final Request<Application> request, final Application entity) {
-
 		//Status
 		ApplicationStatus status = ApplicationStatus.PENDING;
-		entity.setStatus(status);
+		result.setStatus(status);
 
 		//Worker
 		Principal principal = request.getPrincipal();
 		Worker worker = this.repository.findWorkerById(principal.getActiveRoleId());
-		entity.setWorker(worker);
+		result.setWorker(worker);
 
 		//Job
 		String jobIdString = request.getServletRequest().getQueryString().split("jobid=")[1];
@@ -115,18 +116,18 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		int jobId = Integer.parseInt(jobIdString);
 
 		Job job = this.repository.findJobById(jobId);
-		entity.setJob(job);
+		result.setJob(job);
 
 		//Moment
 		Date moment;
 		moment = new Date(System.currentTimeMillis() - 1);
-		entity.setMoment(moment);
+		result.setMoment(moment);
 
 		//Skills
-		entity.setSkills(worker.getSkillsRecord());
+		result.setSkills(worker.getSkillsRecord());
 
 		//Qualifications
-		entity.setQualifications(worker.getQualificationsRecord());
+		result.setQualifications(worker.getQualificationsRecord());
 
 		//Reference number
 		Employer employer = job.getEmployer();
@@ -152,7 +153,20 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 
 		String rNumber = emp + "-" + wor + ":" + jobb;
 
-		entity.setReferenceNumber(rNumber);
+		result.setReferenceNumber(rNumber);
+
+		return result;
+	}
+
+	@Override
+	public void validate(final Request<Application> request, final Application entity, final Errors errors) {
+		assert request != null;
+		assert entity != null;
+		assert errors != null;
+	}
+
+	@Override
+	public void create(final Request<Application> request, final Application entity) {
 
 		this.repository.save(entity);
 	}

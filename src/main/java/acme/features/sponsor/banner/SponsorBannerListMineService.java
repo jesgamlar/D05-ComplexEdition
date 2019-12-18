@@ -19,7 +19,7 @@ public class SponsorBannerListMineService implements AbstractListService<Sponsor
 	//Internal state --------------------------------------------------
 
 	@Autowired
-	SponsorBannerRepository repository;
+	private SponsorBannerRepository repository;
 
 
 	//AbstractListService<Authenticated, Announcement> interface ------

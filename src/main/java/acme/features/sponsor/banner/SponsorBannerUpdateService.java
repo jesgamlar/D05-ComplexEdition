@@ -11,7 +11,6 @@ import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.components.Response;
-import acme.framework.entities.Principal;
 import acme.framework.helpers.PrincipalHelper;
 import acme.framework.services.AbstractUpdateService;
 
@@ -57,13 +56,13 @@ public class SponsorBannerUpdateService implements AbstractUpdateService<Sponsor
 		assert request != null;
 
 		CommercialBanner result;
-		Principal principal;
-		int userAccountId;
 
-		principal = request.getPrincipal();
-		userAccountId = principal.getAccountId();
+		int id;
+		id = request.getModel().getInteger("id");
 
-		result = this.repository.findOneCommercialBannerById(userAccountId);
+
+		result = this.repository.findOneCommercialBannerById(id);
+
 
 		return result;
 	}
@@ -73,6 +72,29 @@ public class SponsorBannerUpdateService implements AbstractUpdateService<Sponsor
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+
+		if (!errors.hasErrors("slogan")) {
+			double threshold = this.repository.findThreshold();
+			String[] spanishWords = this.repository.findSpanishWords().split(", ");
+			String[] englishWords = this.repository.findEnglishWords().split(", ");
+			double numberWordsBody = entity.getSlogan().split("\\s|\\.|\\,").length;
+
+			double spamWords = 0.;
+			for (String s : spanishWords) {
+				if (entity.getSlogan().contains(s)) {
+					spamWords++;
+				}
+			}
+			for (String s : englishWords) {
+				if (entity.getSlogan().contains(s)) {
+					spamWords++;
+				}
+			}
+
+			errors.state(request, spamWords / numberWordsBody * 100 <= threshold, "slogan", "sponsor.banner.form.error.spam");
+
+		}
+
 	}
 
 	@Override
