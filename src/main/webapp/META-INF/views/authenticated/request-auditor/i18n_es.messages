@@ -10,7 +10,7 @@
 
 authenticated.requestAuditor.form.title.create = Soticitud de auditor
 
-authenticated.requestAuditor.form.label.firm = Firma
+authenticated.requestAuditor.form.label.firm = Empresa
 authenticated.requestAuditor.form.label.responsibilityStatement = Declaración de Responsabilidad
 
 authenticated.requestAuditor.form.button.create = Solicitud

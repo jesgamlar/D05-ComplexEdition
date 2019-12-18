@@ -4,6 +4,7 @@ package acme.entities.requestAuditor;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 import javax.persistence.Transient;
+
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 
@@ -31,7 +32,6 @@ public class RequestAuditor extends DomainEntity {
 	@Valid
 	@OneToOne(optional = false)
 	private UserAccount			user;
-
 
 	// Derived attributes -----------------------------------------------------
 

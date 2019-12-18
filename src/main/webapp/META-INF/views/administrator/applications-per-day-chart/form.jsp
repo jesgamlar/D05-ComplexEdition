@@ -36,7 +36,9 @@
 					{	label:"<acme:message code="administrator.charts.form.applications.pending"/>",
 						data : [
 							<jstl:forEach var="label" items="${applicationsDates}">
+
 								<jstl:out value="{x: '${label.toString().split(' ')[0]}', y: ${pendingApplications.get(label)}}" escapeXml="false"/>,
+
 							</jstl:forEach>
 						],
 						borderColor: [
@@ -45,8 +47,10 @@
 					},{	label:"<acme:message code="administrator.charts.form.applications.accepted"/>",
 						data : [
 							<jstl:forEach var="label" items="${applicationsDates}">
+
 								<jstl:out value="{x: '${label.toString().split(' ')[0]}', y: ${acceptedApplications.get(label)}}" escapeXml="false"/>,
 								//"<jstl:out value="${acceptedApplications.get(label)}"/>",
+
 							</jstl:forEach>
 						],
 						borderColor: [
@@ -57,6 +61,7 @@
 							<jstl:forEach var="label" items="${applicationsDates}">
 							<jstl:out value="{x: '${label.toString().split(' ')[0]}', y: ${rejectedApplications.get(label)}}" escapeXml="false"/>,
 								//"<jstl:out value="${rejectedApplications.get(label)}"/>",
+
 							</jstl:forEach>
 						],
 						borderColor: [
@@ -69,10 +74,12 @@
 			
 		var options = {
 				scales : {
+
 					xAxes:[{
 						type:"time",
 						distribution: "series",
 					}],
+
 					yAxes : [
 						{
 							ticks: {

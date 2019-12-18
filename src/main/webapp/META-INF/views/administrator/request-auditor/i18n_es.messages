@@ -8,13 +8,15 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-administrator.requestAuditor.list.label.firm = Firma
+administrator.requestAuditor.list.label.firm = Empresa
 administrator.requestAuditor.list.label.responsibilityStatement = Declaración de Responsabilidad
+administrator.requestAuditor.list.label.username = Nombre de usuario
 
-administrator.requestAuditor.form.label.firm = Firma:
+administrator.requestAuditor.form.label.firm = Empresa:
 administrator.requestAuditor.form.label.responsibilityStatement = Declaración de Responsabilidad:
 
-administrator.requestAuditor.list.label.username = Nombre de usuario
+
+
 
 administrator.requestAuditor.form.button.delete = Aceptar
 administrator.requestAuditor.form.button.return = Volver

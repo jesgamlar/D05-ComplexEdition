@@ -40,6 +40,7 @@ public class AuthenticatedRequestAuditorCreateService implements AbstractCreateS
 		assert request != null;
 		Auditor a = new Auditor();
 		return !request.getPrincipal().hasRole(a.getClass());
+
 	}
 
 	@Override
@@ -52,6 +53,7 @@ public class AuthenticatedRequestAuditorCreateService implements AbstractCreateS
 		if (!errors.hasErrors("request")) {
 			errors.state(request, u == null, "error", "authenticated.auditor.form.error.request");
 		}
+
 
 	}
 

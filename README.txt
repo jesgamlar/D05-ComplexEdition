@@ -36,3 +36,4 @@ de esa cadena de mensajes. Tendrá un botón para listar los participantes de es
 TASK 005: Si un usuario autentificado ha realizado una solicitud para convertirse en auditor, le aparecerá un error al intentar enviar
 otra (este error aparecerá después de introducir los datos de la nueva solicitud y clicar en 'solicitar').  
 
+
