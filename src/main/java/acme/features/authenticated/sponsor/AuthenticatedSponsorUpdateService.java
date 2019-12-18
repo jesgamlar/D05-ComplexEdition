@@ -28,13 +28,11 @@ import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.components.Response;
 import acme.framework.entities.Authenticated;
-import acme.framework.entities.Principal;
-import acme.framework.entities.UserAccount;
 import acme.framework.helpers.PrincipalHelper;
-import acme.framework.services.AbstractCreateService;
+import acme.framework.services.AbstractUpdateService;
 
 @Service
-public class AuthenticatedSponsorCreateService implements AbstractCreateService<Authenticated, Sponsor> {
+public class AuthenticatedSponsorUpdateService implements AbstractUpdateService<Authenticated, Sponsor> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -47,8 +45,8 @@ public class AuthenticatedSponsorCreateService implements AbstractCreateService<
 	@Override
 	public boolean authorise(final Request<Sponsor> request) {
 		assert request != null;
-		Sponsor c = new Sponsor();
-		return !request.getPrincipal().hasRole(c.getClass());
+
+		return true;
 	}
 
 	@Override
@@ -116,36 +114,6 @@ public class AuthenticatedSponsorCreateService implements AbstractCreateService<
 	}
 
 	@Override
-	public Sponsor instantiate(final Request<Sponsor> request) {
-		assert request != null;
-
-		Sponsor result;
-		Principal principal;
-		int userAccountId;
-		UserAccount userAccount;
-
-		principal = request.getPrincipal();
-		userAccountId = principal.getAccountId();
-		userAccount = this.repository.findOneUserAccountById(userAccountId);
-
-		result = new Sponsor();
-		result.setUserAccount(userAccount);
-
-		return result;
-	}
-
-	@Override
-	public void create(final Request<Sponsor> request, final Sponsor entity) {
-		assert request != null;
-		assert entity != null;
-
-		CreditCard c = new CreditCard();
-		c = entity.getCreditCard();
-		this.repository.save(c);
-		this.repository.save(entity);
-	}
-
-	@Override
 	public void onSuccess(final Request<Sponsor> request, final Response<Sponsor> response) {
 		assert request != null;
 		assert response != null;
@@ -153,6 +121,24 @@ public class AuthenticatedSponsorCreateService implements AbstractCreateService<
 		if (request.isMethod(HttpMethod.POST)) {
 			PrincipalHelper.handleUpdate();
 		}
+	}
+
+	@Override
+	public Sponsor findOne(final Request<Sponsor> request) {
+
+		return this.repository.findOneSponsorByUserAccountId(request.getPrincipal().getAccountId());
+	}
+
+	@Override
+	public void update(final Request<Sponsor> request, final Sponsor entity) {
+		assert request != null;
+		assert entity != null;
+
+		CreditCard c = new CreditCard();
+		c = entity.getCreditCard();
+		this.repository.save(c);
+		this.repository.save(entity);
+
 	}
 
 }

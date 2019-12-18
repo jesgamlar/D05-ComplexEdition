@@ -15,7 +15,7 @@ package acme.features.authenticated.sponsor;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import acme.entities.roles.Auditor;
+import acme.entities.roles.Sponsor;
 import acme.framework.entities.UserAccount;
 import acme.framework.repositories.AbstractRepository;
 
@@ -26,6 +26,6 @@ public interface AuthenticatedSponsorRepository extends AbstractRepository {
 	UserAccount findOneUserAccountById(int id);
 
 	@Query("select c from Sponsor c where c.userAccount.id = ?1")
-	Auditor findOneSponsorByUserAccountId(int id);
+	Sponsor findOneSponsorByUserAccountId(int id);
 
 }

@@ -20,9 +20,9 @@
 	<acme:message code="authenticated.sponsor.form.label.creditCard"/>
 	<acme:form-textbox code="authenticated.sponsor.form.label.creditCard.holder" path="creditCard.holder"/>
 	<acme:form-textbox code="authenticated.sponsor.form.label.creditCard.brand" path="creditCard.brand"/>
-	<acme:form-textbox code="authenticated.sponsor.form.label.creditCard.deadline" path="creditCard.deadline"/>
-	<acme:form-textbox code="authenticated.sponsor.form.label.creditCard.number" path="creditCard.number"/>
-	<acme:form-textbox code="authenticated.sponsor.form.label.creditCard.cvv" path="creditCard.cvv"/>
+	<acme:form-textbox code="authenticated.sponsor.form.label.creditCard.deadline" path="creditCard.deadline" placeholder="MM/YY"/>
+	<acme:form-textbox code="authenticated.sponsor.form.label.creditCard.number" path="creditCard.number" placeholder="5[1-5][0-9]{14}$"/>
+	<acme:form-textbox code="authenticated.sponsor.form.label.creditCard.cvv" path="creditCard.cvv" placeholder="^\\d{3,4}$"/>
 	
 	<acme:form-submit test="${command == 'create'}" code="authenticated.sponsor.form.button.create" action="/authenticated/sponsor/create"/>
 	<acme:form-submit test="${command == 'update'}" code="authenticated.sponsor.form.button.update" action="/authenticated/sponsor/update"/>

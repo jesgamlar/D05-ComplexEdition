@@ -30,7 +30,10 @@ public class AuthenticatedSponsorController extends AbstractController<Authentic
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AuthenticatedSponsorCreateService createService;
+	private AuthenticatedSponsorCreateService	createService;
+
+	@Autowired
+	private AuthenticatedSponsorUpdateService	updateService;
 
 
 	// Constructors -----------------------------------------------------------
@@ -38,6 +41,7 @@ public class AuthenticatedSponsorController extends AbstractController<Authentic
 	@PostConstruct
 	private void initialise() {
 		super.addBasicCommand(BasicCommand.CREATE, this.createService);
+		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
 	}
 
 }
