@@ -22,7 +22,7 @@ public interface SponsorBannerRepository extends AbstractRepository {
 	@Query("select ua from Sponsor ua where ua.id = ?1")
 	Sponsor findOneSponsorById(int id);
 
-	@Query("select c from CommercialBanner c where c.userAccount.id = ?1")
-	CommercialBanner findOneCommercialBannerByUserAccountId(int id);
+	@Query("select c from CommercialBanner c where c.id = ?1")
+	CommercialBanner findOneCommercialBannerById(int id);
 
 }

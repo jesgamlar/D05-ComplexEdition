@@ -24,7 +24,7 @@
 	<acme:form-submit test="${command == 'create'}"
 		code="employer.duty.form.button.create"
 		action="/employer/duty/create?${pageContext.request.queryString}"/>
-	<acme:check-access test="${published == false }">
+	<acme:check-access test="${ published == false}">
 		<acme:form-submit test="${command == 'show'}"
 			code="employer.duty.form.button.update"
 			action="/employer/duty/update"/>

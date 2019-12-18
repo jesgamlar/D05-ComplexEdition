@@ -1,7 +1,6 @@
 
 package acme.features.employer.job;
 
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -71,10 +70,7 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 
 		if (!errors.hasErrors("deadline")) {
 			Date currentDate = new Date(System.currentTimeMillis());
-			Calendar calendar = Calendar.getInstance();
-			calendar.setTime(currentDate);
-			calendar.add(Calendar.DAY_OF_YEAR, 7);
-			errors.state(request, entity.getDeadline().after(calendar.getTime()), "deadline", "employer.job.form.error.deadline");
+			errors.state(request, entity.getDeadline().after(currentDate), "deadline", "employer.job.form.error.deadline");
 		}
 
 		if (!errors.hasErrors("reference")) {
