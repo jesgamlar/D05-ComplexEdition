@@ -1,0 +1,25 @@
+# i18n_en.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+sponsor.creditCard.form.label.creditCard.holder = Holder
+sponsor.creditCard.form.label.creditCard.brand = Brand
+sponsor.creditCard.form.label.creditCard.deadline = Deadline
+sponsor.creditCard.form.label.creditCard.number = Number
+sponsor.creditCard.form.label.creditCard.cvv = CVV
+
+sponsor.creditCard.form.button.create = Create
+sponsor.creditCard.form.button.update = Update
+sponsor.creditCard.form.button.return = Return
+
+sponsor.creditCard.form.error.deadlineIncorrect = This must be a non-blank date
+sponsor.creditCard.form.error.deadline = The deadline must be a future date
+sponsor.creditCard.form.error.deadlinePattern = The deadline does not match the format MM/YY
+sponsor.creditCard.form.error.numberPattern = The number does not match the format 5[1-5][0-9]{14}$
+sponsor.creditCard.form.error.cvvPattern = The cvv does not match the format ^\\d{3,4}$

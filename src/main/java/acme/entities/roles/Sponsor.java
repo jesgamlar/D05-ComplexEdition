@@ -3,6 +3,7 @@ package acme.entities.roles;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 
 import acme.entities.creditCard.CreditCard;
@@ -21,7 +22,8 @@ public class Sponsor extends UserRole {
 	@NotBlank
 	private String				organisationName;
 
-	@OneToOne
+	@OneToOne(optional = true)
+	@Valid
 	private CreditCard			creditCard;
 
 }
