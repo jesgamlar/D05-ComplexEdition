@@ -16,4 +16,8 @@ administrator.commercial-banner.form.label.slogan = Slogan
 administrator.commercial-banner.list.label.picture = Picture URL
 administrator.commercial-banner.list.label.url = Target URL
 
+sponsor.commercial-banner.form.button.create = Create
+sponsor.commercial-banner.form.button.update = Update
+sponsor.commercial-banner.form.button.delete = Delete
+
 administrator.commercial-banner.form.button.return = Return
