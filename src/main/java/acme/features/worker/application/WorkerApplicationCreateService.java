@@ -69,7 +69,15 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "statement");
+		Principal principal = request.getPrincipal();
+		int workerId = principal.getActiveRoleId();
+
+		Worker worker = this.repository.findWorkerById(workerId);
+
+		entity.setSkills(worker.getSkillsRecord());
+		entity.setQualifications(worker.getQualificationsRecord());
+
+		request.unbind(entity, model, "statement", "skills", "qualifications");
 
 	}
 

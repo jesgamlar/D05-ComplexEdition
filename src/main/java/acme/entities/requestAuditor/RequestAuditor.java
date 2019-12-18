@@ -3,6 +3,8 @@ package acme.entities.requestAuditor;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
+import javax.persistence.Transient;
+
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 
@@ -32,6 +34,11 @@ public class RequestAuditor extends DomainEntity {
 	private UserAccount			user;
 
 	// Derived attributes -----------------------------------------------------
+
+	@Transient
+	public String getUserUsername() {
+		return this.user.getUsername();
+	}
 
 	// Relationships ----------------------------------------------------------
 

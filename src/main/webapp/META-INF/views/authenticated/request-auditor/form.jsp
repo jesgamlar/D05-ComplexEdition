@@ -16,6 +16,9 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
+	
+	<acme:form-errors path="error"/>
+
 	<acme:form-textbox code="authenticated.requestAuditor.form.label.firm" path="firm"/>
 	<acme:form-textbox code="authenticated.requestAuditor.form.label.responsibilityStatement" path="responsibilityStatement"/>
 	

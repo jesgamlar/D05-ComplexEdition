@@ -13,7 +13,7 @@ worker.application.form.label.referenceNumber = Número de referencia:
 worker.application.form.label.moment = Momento:
 worker.application.form.label.statement = Declaración:
 worker.application.form.label.skills = Habilidades:
-worker.application.form.label.qualifications = Calificaciones:
+worker.application.form.label.qualifications = Cualidades:
 
 worker.application.list.label.referenceNumber = Número de referencia
 worker.application.list.label.status = Estado

@@ -80,7 +80,8 @@ public class EmployerApplicationUpdateService implements AbstractUpdateService<E
 		}
 
 		if (!errors.hasErrors("reject")) {
-			errors.state(request, request.getModel().getAttribute("reject").equals("true") && !entity.getJustification().isEmpty(), "justification", "employer.application.form.error.reject");
+			errors.state(request, request.getModel().getAttribute("reject").equals("true") && !entity.getJustification().isEmpty() || request.getModel().getAttribute("accept").equals("true"), "justification", "employer.application.form.error.reject");
+
 		}
 
 	}

@@ -414,7 +414,7 @@
     
     <bean name="application01" class="acme.entities.applications.Application">
     	<property name="referenceNumber" value="WOR1-APP1" />
-    	<property name="moment" value="2019/12/12 23:00" />
+    	<property name="moment" value="2019/11/20 23:00" />
     	<property name="statement" value="example statement" />
     	<property name="skills" value="example skills" />
     	<property name="qualifications" value="example qualifications" />

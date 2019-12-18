@@ -21,7 +21,7 @@ employer.application.form.error.reject = Debes justificar el rechazo de la solic
 employer.application.form.button.update = Actualizar
 
 employer.application.list.label.referenceNumber = Número de referencia
-employer.application.list.label.title = Título
+employer.application.list.label.statement = Declaración
 employer.application.list.label.moment = Momento
 employer.application.list.label.status = Estado
 

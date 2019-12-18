@@ -15,3 +15,5 @@ authenticated.requestAuditor.form.label.responsibilityStatement = Declaración d
 
 authenticated.requestAuditor.form.button.create = Solicitud
 authenticated.requestAuditor.form.button.return = Volver
+
+authenticated.auditor.form.error.request = Ya ha enviado una solicitud

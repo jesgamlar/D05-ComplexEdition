@@ -14,5 +14,6 @@ administrator.requestAuditor.list.label.responsibilityStatement = Responsibility
 administrator.requestAuditor.form.label.firm = Firm:
 administrator.requestAuditor.form.label.responsibilityStatement = Responsibility Statement:
 
+administrator.requestAuditor.list.label.username = Username
 administrator.requestAuditor.form.button.delete = Acept
 administrator.requestAuditor.form.button.return = Return

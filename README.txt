@@ -33,3 +33,7 @@ TASK 006: Un usuario autenticado podrá administrar los usuarios de sus cadenas 
 de esa cadena de mensajes. Tendrá un botón para listar los participantes de esa cadena y podrá añadir nuevos y borrar los ya existentes
 (el botón para borrar se encuentra en el show de cada participante).
 
+TASK 005: Si un usuario autentificado ha realizado una solicitud para convertirse en auditor, le aparecerá un error al intentar enviar
+otra (este error aparecerá después de introducir los datos de la nueva solicitud y clicar en 'solicitar').  
+
+
