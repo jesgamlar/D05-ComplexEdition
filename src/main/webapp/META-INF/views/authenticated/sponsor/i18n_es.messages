@@ -1,0 +1,30 @@
+# i18n_es.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+authenticated.sponsor.form.title.create = Hazte patrocinador
+authenticated.sponsor.form.title.update = Actualiza tus datos de patrocinador
+
+authenticated.sponsor.form.label.organisationName = Nombre de la organización
+authenticated.sponsor.form.label.creditCard = Tarjeta de crédito:
+authenticated.sponsor.form.label.creditCard.holder = Titular
+authenticated.sponsor.form.label.creditCard.brand = Marca
+authenticated.sponsor.form.label.creditCard.deadline = Caducidad
+authenticated.sponsor.form.label.creditCard.number = Número
+authenticated.sponsor.form.label.creditCard.cvv = CVV
+
+authenticated.sponsor.form.button.create = Registrar
+authenticated.sponsor.form.button.update = Actualizar
+authenticated.sponsor.form.button.return = Volver
+
+authenticated.sponsor.form.error.deadlineIncorrect = Esto debe ser una fecha no vacía
+authenticated.sponsor.form.error.deadline = La fecha de caducidad debe estar en el futuro
+authenticated.sponsor.form.error.deadlinePattern = La fecha de caducidad no está en el formato MM/YY
+authenticated.sponsor.form.error.numberPattern = El número de tarjeta no está en el formato 5[1-5][0-9]{14}$
+authenticated.sponsor.form.error.cvvPattern = El CVV no está en el formato ^\\d{3,4}$

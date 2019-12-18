@@ -1,0 +1,30 @@
+# i18n_en.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+authenticated.sponsor.form.title.create = Become a sponsor
+authenticated.sponsor.form.title.update = Update your sponsor data
+
+authenticated.sponsor.form.label.organisationName = Organisation Name
+authenticated.sponsor.form.label.creditCard = Credit Card:
+authenticated.sponsor.form.label.creditCard.holder = Holder
+authenticated.sponsor.form.label.creditCard.brand = Brand
+authenticated.sponsor.form.label.creditCard.deadline = Deadline
+authenticated.sponsor.form.label.creditCard.number = Number
+authenticated.sponsor.form.label.creditCard.cvv = CVV
+
+authenticated.sponsor.form.button.create = Register
+authenticated.sponsor.form.button.update = Update
+authenticated.sponsor.form.button.return = Return
+
+authenticated.sponsor.form.error.deadlineIncorrect = This must be a non-blank date
+authenticated.sponsor.form.error.deadline = The deadline must be a future date
+authenticated.sponsor.form.error.deadlinePattern = The deadline does not match the format MM/YY
+authenticated.sponsor.form.error.numberPattern = The number does not match the format 5[1-5][0-9]{14}$
+authenticated.sponsor.form.error.cvvPattern = The cvv does not match the format ^\\d{3,4}$
