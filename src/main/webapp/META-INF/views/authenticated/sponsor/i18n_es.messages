@@ -12,15 +12,11 @@ authenticated.sponsor.form.title.create = Hazte patrocinador
 authenticated.sponsor.form.title.update = Actualiza tus datos de patrocinador
 
 authenticated.sponsor.form.label.organisationName = Nombre de la organización
-authenticated.sponsor.form.label.creditCard = Tarjeta de crédito:
-authenticated.sponsor.form.label.creditCard.holder = Titular
-authenticated.sponsor.form.label.creditCard.brand = Marca
-authenticated.sponsor.form.label.creditCard.deadline = Caducidad
-authenticated.sponsor.form.label.creditCard.number = Número
-authenticated.sponsor.form.label.creditCard.cvv = CVV
 
 authenticated.sponsor.form.button.create = Registrar
 authenticated.sponsor.form.button.update = Actualizar
+authenticated.sponsor.form.button.creditCard.update = tarjeta de crédito
+authenticated.sponsor.form.button.creditCard.create = tarjeta de crédito
 authenticated.sponsor.form.button.return = Volver
 
 authenticated.sponsor.form.error.deadlineIncorrect = Esto debe ser una fecha no vacía

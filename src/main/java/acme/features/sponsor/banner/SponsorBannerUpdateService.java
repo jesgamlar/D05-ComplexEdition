@@ -60,7 +60,9 @@ public class SponsorBannerUpdateService implements AbstractUpdateService<Sponsor
 		int id;
 		id = request.getModel().getInteger("id");
 
+
 		result = this.repository.findOneCommercialBannerById(id);
+
 
 		return result;
 	}
